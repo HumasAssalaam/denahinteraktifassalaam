@@ -15,7 +15,7 @@
     "selatan-lt2-r1": { "name": "Kelas 11-MIPA", "type": "room-type-kelas", "waliKelasId": "T22", "kapasitas": 22, "layout": { "gridArea": "2 / 2 / 3 / 4" } },
     "selatan-lt2-r2": { "name": "Kelas 11-IPS", "type": "room-type-kelas", "waliKelasId": "T10", "kapasitas": 27, "layout": { "gridArea": "3 / 2 / 4 / 4" } },
     "selatan-lt2-r3": { "name": "Gudang", "type": "room-type-gudang", "desc": "Gudang MTs.", "layout": { "gridArea": "4 / 2 / 5 / 4" } },
-    "selatan-lt2-r4": { "name": "Ruang Tahfidz", "type": "room-type-kamar-dan-halaman", "desc": "Ruang Hafalan & Setoran Santri Tahfidz.", "layout": { "gridArea": "5 / 2 / 6 / 4" } },
+    "selatan-lt2-r4": { "name": "Ruang Tahfidz", "type": "room-type-kamar-dan-halaman", "desc": "Ruang Hafalan & Setoran Santri Tahfidz.", "keyPersonnel": [{"title": "Pengampu Kelas Tahfidz","teacherId": "T37" }], "layout": { "gridArea": "5 / 2 / 6 / 4" } },
     "selatan-lt3-ruang-besar": { "name": "-", "type": "", "desc": "kosong", "layout": { "gridArea": "1 / 1 / 2 / 2" } },
     "selatan-lt3-kamar-mandi": { "name": "-", "type": "", "desc": "kosong", "layout": { "gridArea": "1 / 2 / 2 / 3" } },
     "selatan-lt3-tangga": { "name": "Tangga", "type": "room-type-tangga", "desc": "Akses menuju Lantai 2.", "layout": { "gridArea": "1 / 3 / 2 / 4" } },
