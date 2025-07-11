@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denah Interaktif Assalaam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-container" class="container">
+        <!-- ================================================== -->
+        <!-- DENAH GEDUNG SELATAN -->
+        <!-- ================================================== -->
+        <div id="plan-selatan" class="building-plan">
+            <img src="" alt="Logo Sekolah" class="school-logo">
+            <h1><span>Denah Gedung Selatan</span><span>Pondok Modern Assalaam</span></h1>
+            <div class="floor-selector">
+                <button data-floor="1" class="active">Lantai 1</button>
+                <button data-floor="2">Lantai 2</button>
+                <button data-floor="3">Lantai 3</button>
+            </div>
+            <div class="plan-wrapper">
+                <div id="plan-grid-selatan" class="floor-plan">
+                    <!-- Lantai 1 -->
+                    <div id="selatan-lt1-ruang-besar" class="room" data-id="selatan-lt1-ruang-besar"></div>
+                    <div id="selatan-lt1-kamar-mandi" class="room" data-id="selatan-lt1-kamar-mandi"></div>
+                    <div id="selatan-lt1-tangga" class="room" data-id="selatan-lt1-tangga"></div>
+                    <div id="selatan-lt1-r1" class="room" data-id="selatan-lt1-r1"></div>
+                    <div id="selatan-lt1-r2" class="room" data-id="selatan-lt1-r2"></div>
+                    <div id="selatan-lt1-r3" class="room" data-id="selatan-lt1-r3"></div>
+                    <div id="selatan-lt1-r4" class="room" data-id="selatan-lt1-r4"></div>
+                    <div id="selatan-lt1-halaman-sekolah" class="area-luar" data-id="selatan-lt1-halaman-sekolah"></div>
+                    <div id="selatan-lt1-gerbang" class="area-luar" data-id="selatan-lt1-gerbang"></div>
+                    <div id="selatan-lt1-tempat-parkir" class="area-luar" data-id="selatan-lt1-tempat-parkir"></div>           
+                    <!-- Lantai 2 -->
+                    <div id="selatan-lt2-ruang-besar" class="room is-invisible" data-id="selatan-lt2-ruang-besar"></div>
+                    <div id="selatan-lt2-kamar-mandi" class="room is-invisible" data-id="selatan-lt2-kamar-mandi"></div>
+                    <div id="selatan-lt2-tangga" class="room is-invisible" data-id="selatan-lt2-tangga"></div>
+                    <div id="selatan-lt2-r1" class="room is-invisible" data-id="selatan-lt2-r1"></div>
+                    <div id="selatan-lt2-r2" class="room is-invisible" data-id="selatan-lt2-r2"></div>
+                    <div id="selatan-lt2-r3" class="room is-invisible" data-id="selatan-lt2-r3"></div>
+                    <div id="selatan-lt2-r4" class="room is-invisible" data-id="selatan-lt2-r4"></div>
+                    <!-- Lantai 3 -->
+                    <div id="selatan-lt3-ruang-besar" class="room is-invisible" data-id="selatan-lt3-ruang-besar"></div>
+                    <div id="selatan-lt3-kamar-mandi" class="room is-invisible" data-id="selatan-lt3-kamar-mandi"></div>
+                    <div id="selatan-lt3-tangga" class="room is-invisible" data-id="selatan-lt3-tangga"></div>
+                    <div id="selatan-lt3-r1" class="room is-invisible" data-id="selatan-lt3-r1"></div>
+                    <div id="selatan-lt3-r2" class="room is-invisible" data-id="selatan-lt3-r2"></div>
+                    <div id="selatan-lt3-r3" class="room is-invisible" data-id="selatan-lt3-r3"></div>
+                    <div id="selatan-lt3-r4" class="room is-invisible" data-id="selatan-lt3-r4"></div>
+                </div>
+            </div>
+        </div>
+        <!-- ================================================== -->
+        <!-- DENAH GEDUNG UTARA -->
+        <!-- ================================================== -->
+        <div id="plan-utara" class="building-plan active">
+            <img src="" alt="Logo Sekolah" class="school-logo">
+            <h1><span>Denah Gedung Utara</span><span>Pondok Modern Assalaam</span></h1>
+            <div class="floor-selector">
+                <button data-floor="1" class="active">Lantai 1</button>
+                <button data-floor="2">Lantai 2</button>
+            </div>
+            <div class="plan-wrapper">
+                <div id="plan-grid-utara" class="floor-plan">
+                    <!-- Lantai 1 -->
+                    <div id="utara-lt1-sayap-kiri" class="utara-sayap-kiri-container">
+                        <div class="composite-room"><div id="utara-lt1-kiri-r1" class="room" data-id="utara-lt1-kiri-r1"></div><div id="utara-lt1-kiri-r2" class="room" data-id="utara-lt1-kiri-r2"></div></div>
+                        <div id="utara-lt1-kiri-r3" class="room" data-id="utara-lt1-kiri-r3"></div><div id="utara-lt1-kiri-r4" class="room" data-id="utara-lt1-kiri-r4"></div>
+                        <div id="utara-lt1-kiri-r5" class="room" data-id="utara-lt1-kiri-r5"></div><div id="utara-lt1-kiri-r6" class="room" data-id="utara-lt1-kiri-r6"></div>
+                        <div id="utara-lt1-kiri-lorong" class="room" data-id="utara-lt1-kiri-lorong"></div><div id="utara-lt1-kiri-tamu" class="room" data-id="utara-lt1-kiri-tamu"></div>
+                    </div>
+                    <div id="utara-lt1-atas-tangga1" class="room" data-id="utara-lt1-atas-tangga1"></div><div id="utara-lt1-atas-r1" class="room" data-id="utara-lt1-atas-r1"></div>
+                    <div id="utara-lt1-atas-r2" class="room" data-id="utara-lt1-atas-r2"></div><div id="utara-lt1-atas-r3" class="room" data-id="utara-lt1-atas-r3"></div>
+                    <div id="utara-lt1-atas-lorong" class="room" data-id="utara-lt1-atas-lorong"></div><div id="utara-lt1-atas-tangga2" class="room" data-id="utara-lt1-atas-tangga2"></div>
+                    <div id="utara-lt1-tengah-spacer" class="area-luar"></div><div id="utara-lt1-halaman-sekolah" data-id="utara-lt1-halaman-sekolah" class="area-luar"></div>
+                    <div id="utara-lt1-gerbang" class="area-luar" data-id="utara-lt1-gerbang"></div>
+                    <div id="utara-lt1-sayap-kanan" class="utara-sayap-kanan-container">
+                        <div class="composite-room"><div id="utara-lt1-kanan-r1" class="room" data-id="utara-lt1-kanan-r1"></div><div id="utara-lt1-kanan-r2" class="room" data-id="utara-lt1-kanan-r2"></div></div>
+                        <div id="utara-lt1-kanan-r3" class="room" data-id="utara-lt1-kanan-r3"></div><div id="utara-lt1-kanan-r4" class="room" data-id="utara-lt1-kanan-r4"></div>
+                        <div id="utara-lt1-kanan-r5" class="room" data-id="utara-lt1-kanan-r5"></div><div id="utara-lt1-kanan-spacer" class="room" data-id="utara-lt1-kanan-spacer"></div>
+                        <div id="utara-lt1-kanan-tamu" class="room" data-id="utara-lt1-kanan-tamu"></div>
+                    </div>               
+                    <!-- Lantai 2 -->
+                    <div id="utara-lt2-perpustakaan" class="room is-invisible" data-id="utara-lt2-perpustakaan"></div>
+                    <div id="utara-lt2-kiri-r1" class="room is-invisible" data-id="utara-lt2-kiri-r1"></div>
+                    <div id="utara-lt2-atas-tangga1" class="room is-invisible" data-id="utara-lt2-atas-tangga1"></div>
+                    <div id="utara-lt2-atas-r1" class="room is-invisible" data-id="utara-lt2-atas-r1"></div>
+                    <div id="utara-lt2-atas-tangga2" class="room is-invisible" data-id="utara-lt2-atas-tangga2"></div>
+                    <div id="utara-lt2-kanan-r1" class="room is-invisible" data-id="utara-lt2-kanan-r1"></div>
+                    <div id="utara-lt2-kiri-r2" class="room is-invisible" data-id="utara-lt2-kiri-r2"></div>
+                    <div id="utara-lt2-kanan-r3" class="room is-invisible" data-id="utara-lt2-kanan-r3"></div>
+                    <div id="utara-lt2-kiri-r3" class="room is-invisible" data-id="utara-lt2-kiri-r3"></div>
+                    <div id="utara-lt2-kanan-r4" class="room is-invisible" data-id="utara-lt2-kanan-r4"></div>
+                    <div id="utara-lt2-kiri-r4" class="room is-invisible" data-id="utara-lt2-kiri-r4"></div>
+                    <div id="utara-lt2-kanan-r5" class="room is-invisible" data-id="utara-lt2-kanan-r5"></div>
+                </div>
+            </div>
+        </div>
+        <!-- KONTROL UTAMA & MODAL -->
+        <div class="building-selector"><button id="btn-building-utara" class="active">Gedung Utara</button><button id="btn-building-selatan">Gedung Selatan</button></div>
+        <div class="search-container" style="margin-top: 20px; margin-bottom: 10px; position: relative;">
+            <input type="search" id="search-box" placeholder="Cari ruangan, kelas, kantor, atau lab..." style="width: 100%; padding: 12px 15px 12px 40px; border: 2px solid #ccc; border-radius: 7px; font-size: 16px; box-sizing: border-box;">
+                <button id="btn-global-fit" title="Sesuaikan Ukuran Denah">🔭</button>
+            <span style="position: absolute; left: 15px; top: 14px; color: #888;">🔍</span>
+            <div id="search-suggestions" class="suggestions-list"></div>
+        </div>
+        <p style="font-size:12px; margin-top:15px; color:#666;">Catatan: Denah tidak sesuai dengan skala | Klik pada ruangan untuk melihat detail.</p>
+    </div>
+    <!-- MODAL -->
+    <div id="room-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h2 id="modal-title" style="margin-bottom: 20px;">Nama Ruangan</h2>
+    
+            <!-- ============== -->
+            <!-- INFO REAL-TIME -->
+            <!-- ============== -->
+            <div id="modal-live-info" style="display: none; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
+                <p id="live-info-label" style="margin: 0 0 10px 0; font-weight: bold; color: #007bff;"></p>
+                <div class="live-info-details"> 
+                    <img id="live-teacher-img" src="" alt="Foto Guru" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <p id="live-teacher-name" style="margin: 0; font-weight: bold; font-size: 1.1em;"></p>
+                        <p id="live-info-status" style="margin: 2px 0 0 0; font-size: 0.9em; color: #666;"></p>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- INFO RUANGAN STATIS (WALI KELAS, DLL) -->
+            <div id="modal-static-info">
+                <!-- Info Wali Kelas -->
+                <div id="modal-class-info" class="info-block" style="display: none; margin-bottom: 10px;">
+                    <p style="margin: 0; font-size: 0.9em; color: #666;">Wali Kelas</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img id="walas-img" src="" alt="Foto Wali Kelas" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                        <p id="walas-name" style="margin: 0; font-weight: bold; font-size: 1.1em;"></p>
+                    </div>
+                </div>
+                <div id="modal-personnel-info" class="info-block" style="display: none;">
+                </div>
+                
+                <!-- Info Kapasitas -->
+                <div id="modal-capacity-info" class="info-block" style="display: none;">
+                    <p style="margin-top: 10px; font-size: 0.9em;">Kapasitas: <strong id="class-capacity"></strong> Santri</p>
+                </div>
+
+                <!-- Deskripsi Umum Ruangan -->
+                <p id="modal-desc" style="margin-top: 15px;"></p>
+            </div>
+            
+            <a id="modal-link-button" class="action-button" href="#" target="_blank" style="display: none; margin-top: 25px;">
+                Kunjungi Website
+            </a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

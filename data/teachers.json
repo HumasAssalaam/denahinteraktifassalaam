@@ -1,0 +1,179 @@
+
+{
+  "T01": {
+    "name": "Drs. Sofyan Hadi",
+    "image": "images/guru/usthadi.webp"
+  },  
+  "T02": {
+    "name": "Drs. Muflih Wahyanto",
+    "image": "images/guru/ustmuflih.webp"
+  },
+  "T03": {
+    "name": "Fadlil Daryanto, S.E.",
+    "image": "images/guru/ustfadil.webp"
+  },
+  "T04": {
+    "name": "Ilham Ghoffar Solekhan, S.H., M.H.",
+    "image": "images/guru/ustilham.webp"
+  },
+  "T05": {
+    "name": "Sa'adah",
+    "image": "images/guru/usthsaadah.webp"
+  },
+  "T06": {
+    "name": "Santi Wilaswari R, S.Pd.",
+    "image": "images/guru/usthsanti.webp"
+  },
+  "T07": {
+    "name": "Dianisa Permanasari, S.Pd.",
+    "image": "images/guru/usthdianisa.webp"
+  },
+  "T08": {
+    "name": "Nining Purwaningrum, S.Pd.",
+    "image": "images/guru/usthnining.webp"
+  },
+  "T09": {
+    "name": "Hijrauly Albebian, S.I.P.",
+    "image": "images/guru/ustdeveloper.webp"
+  },
+  "T10": {
+    "name": "Zaenal Mustaqim, S.Pd.",
+    "image": "images/guru/ustzaenal.webp"
+  },
+  "T11": {
+    "name": "Laela Nurhidayati, Lc.",
+    "image": "images/guru/usthlaela.webp"
+  },
+  "T12": {
+    "name": "Wardani, S.H.I., S.Pd.",
+    "image": "images/guru/ustwardani.webp"
+  },
+  "T13": {
+    "name": "Budiarti, S.Ag.",
+    "image": "images/guru/usthbudiarti.webp"
+  },
+  "T14": {
+    "name": "Fuad Zen, S.Pd.I",
+    "image": "images/guru/ustzen.webp"
+  },
+  "T15": {
+    "name": "Nofi Fatmawati, S.Pd.",
+    "image": "images/guru/usthnofi.webp"
+  },
+  "T16": {
+    "name": "Eni Erawati, S.Pd.",
+    "image": "images/guru/ustheni.webp"
+  },
+  "T17": {
+    "name": "Istiyono, S.Pd.",
+    "image": "images/guru/ustistiyono.webp"
+  },
+  "T18": {
+    "name": "Hanif Khoeriyah, S.Pd.I",
+    "image": "images/guru/usthhanif.webp"
+  },
+  "T19": {
+    "name": "Sri Hartati, S.E.",
+    "image": "images/guru/usthsrihartati.webp"
+  },
+  "T20": {
+    "name": "Ramini, S.Pd.",
+    "image": "images/guru/usthramini.webp"
+  },
+  "T21": {
+    "name": "Yuniah, S.Pt.",
+    "image": "images/guru/usthyuniah.webp"
+  },
+  "T22": {
+    "name": "Sefi Handayani, S.Pd.",
+    "image": "images/guru/usthsefi.webp"
+  },
+  "T24": {
+    "name": "Nur Faizah, S.Pd.",
+    "image": "images/guru/usthfaizah.webp"
+  },
+  "T25": {
+    "name": "Vinza Satresna, S.Pd.",
+    "image": "images/guru/ustvinza.webp"
+  },
+  "T26": {
+    "name": "Ahmad Rifai, S.Kom.",
+    "image": "images/guru/ustrifai.webp"
+  },
+  "T27": {
+    "name": "Woro Fatimah, S.Pd.",
+    "image": "images/guru/usthworo.webp"
+  },
+  "T28": {
+    "name": "Puji Wuryani, S.H., S.Pd.",
+    "image": "images/guru/usthpuji.webp"
+  },
+  "T29": {
+    "name": "Risty Oni Cikita, S.Tr.Keb.",
+    "image": "images/guru/usthoci.webp"
+  },
+  "T30": {
+    "name": "Arfan Zafrullah, S.Pd.",
+    "image": "images/guru/ustarfan.webp"
+  },
+  "T31": {
+    "name": "M. Bagus Wildani",
+    "image": "images/guru/ustwildani.webp"
+  },
+  "T32": {
+    "name": "Istakim",
+    "image": "images/guru/ustistakim.webp"
+  },
+  "T33": {
+    "name": "Fitrotul Khasanah, S.Pd.",
+    "image": "images/guru/usthfitroh.webp"
+  },
+  "T35": {
+    "name": "Sofiatul Baroroh, S.Pd.",
+    "image": "images/guru/usthsofi.webp"
+  },
+  "T36": {
+    "name": "Robit Murtaqi, S.H.",
+    "image": "images/guru/ustrobit.webp"
+  },
+  "T37": {
+    "name": "Nurhamid, S.Pd.I.",
+    "image": "images/guru/usthamid.webp"
+  },
+  "T38": {
+    "name": "Muzdalifah, S.Pd.",
+    "image": "images/guru/usthmuzda.webp"
+  },
+  "T39": {
+    "name": "Mukhammad Muqorrobin, S.Pd.",
+    "image": "images/guru/ustrobin.webp"
+  },
+  "T40": {
+    "name": "Tim Tahsin",
+    "image": "images/guru/timtahsin.webp"
+  },
+  "T41": {
+    "name": "Meidiala Meisha Meiulawati, S.Pd.",
+    "image": "images/guru/usthmeimeimei.webp"
+  },
+  "T42": {
+    "name": "Muhamad Roikhan Atthokilla, S.Pd.",
+    "image": "images/guru/ustatok.webp"
+  },
+  "T43": {
+    "name": "Zidni Najmal Ulya",
+    "image": "images/guru/usthulya.webp"
+  },
+  "T44": {
+    "name": "Akmalanti Anggraini",
+    "image": "images/guru/usthanggraini.webp"
+  },
+  "T45": {
+    "name": "Irma Nur Cahyani",
+    "image": "images/guru/usthirma.webp"
+  },
+  "T46": {
+    "name": "Luk-Luk Abdillah, S.Pd.",
+    "image": "images/guru/usthluk2.webp"
+  }
+}
