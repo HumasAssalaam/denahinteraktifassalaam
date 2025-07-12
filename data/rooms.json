@@ -29,8 +29,10 @@
     "utara-lt1-gerbang": { "name": "Gerbang", "type": "room-type-tangga", "desc": "", "layout": { "gridArea": "9 / 2 / 10 / 8" } },
     "utara-lt1-atas-tangga1": { "name": "Tangga", "type": "room-type-tangga", "desc": "Akses menuju Lt. 2 & Underground.", "layout": { "gridArea": "1 / 2 / 2 / 3" } },
     "utara-lt1-atas-r1": { "name": "Lab TIK", "type": "room-type-lab", "desc": "Ruang Komputer dan Informatika.", "layout": { "gridArea": "1 / 3 / 2 / 4" } },
-    "utara-lt1-atas-r2": { "name": "Ruang PSB", "type": "room-type-kantor", "desc": "Ruang Penerimaan Santri Baru.", "layout": { "gridArea": "1 / 4 / 2 / 5" } },
-    "utara-lt1-atas-r3": { "name": "Lab Bahasa", "type": "room-type-lab", "desc": "Ruang Belajar Bahasa.", "keyPersonnel": [{"title": "Kepala Lab Bahasa","teacherId": "T27" }], "layout": { "gridArea": "1 / 5 / 2 / 6" } },
+    "utara-lt1-atas-r2": { "name": "Ruang PSB", "type": "room-type-kantor", "desc": "Ruang Penerimaan Santri Baru.", "keyPersonnel": [{"title": "Pudir Humas Assalaam","teacherId": "T27" }],"contactInfo": {
+      "label": "Hubungi Humas Pondok Modern Assalaam",
+      "whatsappNumber": "+6282220341914"}, "layout": { "gridArea": "1 / 4 / 2 / 5" } },
+    "utara-lt1-atas-r3": { "name": "Lab Bahasa", "type": "room-type-lab", "desc": "Ruang Belajar Bahasa.", "layout": { "gridArea": "1 / 5 / 2 / 6" } },
     "utara-lt1-atas-lorong": { "name": "lorong", "type": "", "desc": "Akses menuju GSG, Masjid, Asrama.", "layout": { "gridArea": "1 / 6 / 2 / 7" } },
     "utara-lt1-atas-tangga2": { "name": "Tangga", "type": "room-type-tangga", "desc": "Akses menuju Lt. 2.", "layout": { "gridArea": "1 / 7 / 2 / 8" } },
     "utara-lt1-tengah-spacer": { "name": "", "type": "", "desc": "", "layout": { "gridArea": "2 / 2 / 3 / 8" } },

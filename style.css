@@ -254,3 +254,24 @@
     color: #6c757d; /* Warna teks abu-abu */
     font-weight: 500;
 }
+#modal-contact-container {
+    margin-top: 15px; /* Beri jarak dari elemen di atasnya */
+    width: 100%;
+    text-align: center; /* Tombol berada di tengah */
+}
+
+.btn-contact-whatsapp {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #25D366; /* Warna khas WhatsApp */
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.btn-contact-whatsapp:hover {
+    background-color: #128C7E; /* Warna lebih gelap saat disentuh */
+}

@@ -394,7 +394,7 @@ document.querySelectorAll('.room, .area-luar[data-id]').forEach(room => {
             const classCapacity = document.getElementById('class-capacity');
             const btnShowSchedule = document.getElementById('btn-show-schedule');
             const scheduleContainer = document.getElementById('modal-schedule-container');
-
+            const contactContainer = document.getElementById('modal-contact-container');
             // --- RESET TAMPILAN MODAL ---
             modalTitle.textContent = data.name;
             liveInfoContainer.style.display = 'none';
@@ -405,8 +405,8 @@ document.querySelectorAll('.room, .area-luar[data-id]').forEach(room => {
             personnelContainer.style.display = 'none';
             personnelContainer.innerHTML = '';
             btnShowSchedule.style.display = 'none'; // Sembunyikan tombol jadwal
-            scheduleContainer.style.display = 'none'; // Sembunyikan kontainer jadwal
-
+            scheduleContainer.style.display = 'none';
+            contactContainer.innerHTML = ''; 
             // --- ISI KONTEN MODAL ---
             
             // Tampilkan tombol link jika ada
@@ -433,7 +433,18 @@ document.querySelectorAll('.room, .area-luar[data-id]').forEach(room => {
                 });
                 personnelContainer.style.display = 'block';
             }
-            
+            if (data.contactInfo && data.contactInfo.whatsappNumber) {
+                const contactButton = document.createElement('a');
+                contactButton.href = `https://wa.me/${data.contactInfo.whatsappNumber}`;
+                contactButton.target = '_blank'; // Buka di tab baru
+                contactButton.rel = 'noopener noreferrer';
+                contactButton.className = 'btn-contact-whatsapp'; // Class dari CSS
+                contactButton.textContent = data.contactInfo.label || 'Hubungi Kami'; // Ambil label dari JSON
+
+                // Masukkan tombol ke dalam containernya
+                contactContainer.appendChild(contactButton);
+            }
+
             // Tampilkan info spesifik untuk kelas (wali kelas, kapasitas, dan tombol jadwal)
             if (room.classList.contains('room-type-kelas')) {
                 if (data.waliKelasId && teacherData[data.waliKelasId]) {
