@@ -5,7 +5,8 @@
       { "time": "08:20-09:40", "subject": "Matematika", "teacher": "Fitrotul Khasanah, S.Pd." },
       { "time": "09:40-10:00", "subject": "Istirahat", "teacher": null },
       { "time": "10:00-11:20", "subject": "Ilmu Pengetahuan Sosial (IPS)", "teacher": "Sri Hartati, S.E." },
-      { "time": "11:20-13:40", "subject": "Pendidikan Kewarganegaraan (PKn)", "teacher": "Yuniah, S.Pt." },
+      { "time": "11:20-12:00", "subject": "Pendidikan Kewarganegaraan (PKn)", "teacher": "Yuniah, S.Pt." },
+      { "time": "13:00-13:40", "subject": "Pendidikan Kewarganegaraan (PKn)", "teacher": "Yuniah, S.Pt." },
       { "time": "13:40-14:20", "subject": "Bahasa Indonesia", "teacher": "Meidiala Meisha Meiulawati, S.Pd." }
     ],
     "2": [
@@ -130,6 +131,7 @@
       { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "teacher": "Tim Tahsin" },
       { "time": "07:40-09:00", "subject": "Bahasa Inggris", "teacher": "Nofi Fatmawati, S.Pd." },
       { "time": "09:00-09:40", "subject": "Mahfuzhot", "teacher": "Sa'adah" },
+      { "time": "10:00-10:40", "subject": "Ilmu Pengetahuan Sosial (IPS)", "teacher": "Sri Hartati, S.E." },
       { "time": "10:40-12:00", "subject": "Bahasa Arab", "teacher": "Nurhamid, S.Pd.I." },
       { "time": "13:00-14:20", "subject": "Ilmu Pengetahuan Alam (IPA)", "teacher": "Istiyono, S.Pd." }
     ]
@@ -223,12 +225,15 @@
     "2": [
       { "time": "07:00-08:20", "subject": "Ilmu Pengetahuan Alam (IPA)", "teacher": "Istiyono, S.Pd." },
       { "time": "08:20-09:40", "subject": "Bahasa Indonesia", "teacher": "Nining Purwaningrum, S.Pd." },
+      { "time": "09:40-10:00", "subject": "Istirahat", "teacher": null },
+      { "time": "10:00-10:40", "subject": "Pendidikan Kewarganegaraan (PKn)", "teacher": "Yuniah, S.Pt." },
       { "time": "10:40-12:00", "subject": "Mahfuzhot", "teacher": "Robit Murtaqi, S.H." },
       { "time": "13:00-14:20", "subject": "Matematika", "teacher": "Dianisa Permanasari, S.Pd." }
     ],
     "3": [
       { "time": "07:00-08:20", "subject": "Sejarah Kebudayaan Islam (SKI)", "teacher": "Hanif Khoeriyah, S.Pd.I" },
       { "time": "08:20-09:40", "subject": "Matematika", "teacher": "Dianisa Permanasari, S.Pd." },
+      { "time": "10:00-10:40", "subject": "Prakarya", "teacher": null },
       { "time": "10:40-12:00", "subject": "Bahasa Inggris", "teacher": "Nofi Fatmawati, S.Pd." },
       { "time": "13:00-14:20", "subject": "Bahasa Arab", "teacher": "M. Bagus Wildani" }
     ],
@@ -241,6 +246,7 @@
     "5": [
       { "time": "07:00-08:10", "subject": "Fikih", "teacher": "Nurhamid, S.Pd.I." },
       { "time": "08:10-09:20", "subject": "Bahasa Inggris", "teacher": "Nofi Fatmawati, S.Pd." },
+      { "time": "09:35-10:10", "subject": "Bahasa Arab", "teacher": "M. Bagus Wildani" },
       { "time": "10:10-11:20", "subject": "Tafsir", "teacher": "Istakim" }
     ],
     "6": [
@@ -262,13 +268,14 @@
       { "time": "07:00-08:20", "subject": "Sejarah Kebudayaan Islam (SKI)", "teacher": "Hanif Khoeriyah, S.Pd.I" },
       { "time": "08:20-09:40", "subject": "Tafsir", "teacher": "Istakim" },
       { "time": "10:00-11:20", "subject": "Pendidikan Jasmani (Penjas)", "teacher": "Vinza Satresna, S.Pd." },
-      { "time": "11:20-14:20", "subject": "Bahasa Arab", "teacher": "M. Bagus Wildani" }
+      { "time": "11:20-12:00", "subject": "Bahasa Arab", "teacher": "M. Bagus Wildani" },
+      { "time": "13:00-14:20", "subject": "Bahasa Arab", "teacher": "M. Bagus Wildani" }
     ],
     "3": [
       { "time": "07:00-08:20", "subject": "Bahasa Indonesia", "teacher": "Meidiala Meisha Meiulawati, S.Pd." },
       { "time": "08:20-09:40", "subject": "Mahfuzhot", "teacher": "Robit Murtaqi, S.H." },
-      { "time": "10:00-11:20", "subject": "Matematika", "teacher": "Dianisa Permanasari, S.Pd." },
-      { "time": "11:20-12:00", "subject": "Tamrin Lughoh", "teacher": "Sa'adah" },
+      { "time": "10:00-10:40", "subject": "Prakarya", "teacher": null },
+      { "time": "10:40-12:00", "subject": "Tamrin Lughoh", "teacher": "Sa'adah" },
       { "time": "13:00-14:20", "subject": "Bahasa Inggris", "teacher": "Nofi Fatmawati, S.Pd." }
     ],
     "4": [
@@ -302,7 +309,8 @@
       { "time": "07:40-09:00", "subject": "Nahwu", "teacher": "Fuad Zen, S.Pd.I" },
       { "time": "09:00-10:40", "subject": "Bahasa Arab", "teacher": "Laela Nurhidayati, Lc." },
       { "time": "10:40-12:00", "subject": "Tafsir", "teacher": "Ilham Ghoffar Solekhan, S.H., M.H." },
-      { "time": "13:00-14:20", "subject": "IPS (Sejarah)", "teacher": "Muzdalifah, S.Pd." }
+      { "time": "13:00-13:40", "subject": "Sejarah Kebudayaan Islam (SKI)", "teacher": "Muzdalifah, S.Pd." },
+      { "time": "13:40-14:20", "subject": "IPS (Sejarah)", "teacher": "Muzdalifah, S.Pd." }
     ],
     "3": [
       { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "teacher": "Tim Tahsin" },
@@ -338,13 +346,15 @@
     "1": [
       { "time": "07:00-08:20", "subject": "IPA (Fisika)", "teacher": "Nur Faizah, S.Pd." },
       { "time": "08:20-09:40", "subject": "Tafsir", "teacher": "Ilham Ghoffar Solekhan, S.H., M.H." },
-      { "time": "10:00-12:00", "subject": "Matematika", "teacher": "Eni Erawati, S.Pd." }
+      { "time": "10:00-12:00", "subject": "Matematika", "teacher": "Eni Erawati, S.Pd." },
+      { "time": "13:00-14:20", "subject": "Prakarya dan Kewirausahaan", "teacher": "Mukhammad Muqorrobin, S.Pd." }
     ],
     "2": [
       { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "teacher": "Tim Tahsin" },
       { "time": "07:40-09:00", "subject": "Bahasa Arab", "teacher": "Laela Nurhidayati, Lc." },
       { "time": "09:00-10:40", "subject": "IPA (Biologi)", "teacher": "Santi Wilaswari R, S.Pd." },
-      { "time": "10:40-12:00", "subject": "Prakarya dan Kewirausahaan", "teacher": "Hijrauly Albebian, S.I.P." }
+      { "time": "10:40-12:00", "subject": "Prakarya dan Kewirausahaan", "teacher": "Hijrauly Albebian, S.I.P." },
+      { "time": "13:00-14:20", "subject": "Qur'an Hadits", "teacher": "Ilham Ghoffar Solekhan, S.H., M.H." }
     ],
     "3": [
       { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "teacher": "Tim Tahsin" },
@@ -411,7 +421,7 @@
     "6": [
       { "time": "07:00-09:00", "subject": "Matematika Lanjutan", "teacher": "Eni Erawati, S.Pd." },
       { "time": "09:00-10:40", "subject": "Kimia", "teacher": "Sefi Handayani, S.Pd." },
-      { "time": "10:40-11:20", "subject": "Sejarah Indonesia", "teacher": "Muzdalifah, S.Pd." },
+      { "time": "10:40-11:20", "subject": "Sejarah", "teacher": "Muzdalifah, S.Pd." },
       { "time": "11:20-12:00", "subject": "Bahasa Inggris", "teacher": "Woro Fatimah, S.Pd." },
       { "time": "13:00-14:20", "subject": "Bahasa Inggris", "teacher": "Woro Fatimah, S.Pd." }
     ]
@@ -491,9 +501,9 @@
       { "time": "10:10-11:20", "subject": "Ilmu Hadits", "teacher": "Robit Murtaqi, S.H." }
     ],
     "6": [
-      { "time": "07:00-08:20", "subject": "Bahasa Inggris", "teacher": "Woro Fatimah, S.Pd." },
-      { "time": "08:20-09:40", "subject": "Hadits", "teacher": "M. Bagus Wildani" },
-      { "time": "09:40-10:40", "subject": "Pendidikan Kewarganegaraan (PKn)", "teacher": "Yuniah, S.Pt." },
+      { "time": "07:00-07:40", "subject": "Bahasa Inggris", "teacher": "Woro Fatimah, S.Pd." },
+      { "time": "07:40-09:00", "subject": "Hadits", "teacher": "M. Bagus Wildani" },
+      { "time": "09:00-10:40", "subject": "Pendidikan Kewarganegaraan (PKn)", "teacher": "Yuniah, S.Pt." },
       { "time": "10:40-11:20", "subject": "Kimia", "teacher": "Sefi Handayani, S.Pd." },
       { "time": "11:20-12:00", "subject": "Sejarah", "teacher": "Muzdalifah, S.Pd." },
       { "time": "13:00-14:20", "subject": "Sejarah", "teacher": "Muzdalifah, S.Pd." }
