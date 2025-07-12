@@ -57,5 +57,6 @@
     "RA MA": { "displayName": "IPA (Fisika)" },
     "SA MA": { "displayName": "IPA (Kimia)" },
     "TA MA": { "displayName": "IPA (Biologi)" },
-    "TN": { "displayName": "Tahsin Santri Baru" }
+    "TN MTs": { "displayName": "Tahsin Santri Baru" },
+    "TN MA": { "displayName": "Tahsin Santri Baru" }
   }

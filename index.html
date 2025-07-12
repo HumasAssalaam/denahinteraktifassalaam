@@ -12,7 +12,10 @@
         <!-- DENAH GEDUNG SELATAN -->
         <!-- ================================================== -->
         <div id="plan-selatan" class="building-plan">
-            <img src="" alt="Logo Sekolah" class="school-logo">
+            
+            <!-- DIperbaiki: Atribut 'src' sekarang menunjuk ke file gambar logo -->
+            <img src="images/logo-sekolah.png" alt="Logo Sekolah" class="school-logo">
+            
             <h1><span>Denah Gedung Selatan</span><span>Pondok Modern Assalaam</span></h1>
             <div class="floor-selector">
                 <button data-floor="1" class="active">Lantai 1</button>
@@ -51,11 +54,15 @@
                 </div>
             </div>
         </div>
+
         <!-- ================================================== -->
         <!-- DENAH GEDUNG UTARA -->
         <!-- ================================================== -->
         <div id="plan-utara" class="building-plan active">
-            <img src="" alt="Logo Sekolah" class="school-logo">
+
+            <!-- DIperbaiki: Atribut 'src' juga diisi di sini -->
+            <img src="images/logo-sekolah.png" alt="Logo Sekolah" class="school-logo">
+            
             <h1><span>Denah Gedung Utara</span><span>Pondok Modern Assalaam</span></h1>
             <div class="floor-selector">
                 <button data-floor="1" class="active">Lantai 1</button>
@@ -97,25 +104,32 @@
                 </div>
             </div>
         </div>
+
+        <!-- ================================================== -->
         <!-- KONTROL UTAMA & MODAL -->
-        <div class="building-selector"><button id="btn-building-utara" class="active">Gedung Utara</button><button id="btn-building-selatan">Gedung Selatan</button></div>
+        <!-- ================================================== -->
+        <div class="building-selector">
+            <button id="btn-building-utara" class="active">Gedung Utara</button>
+            <button id="btn-building-selatan">Gedung Selatan</button>
+        </div>
         <div class="search-container" style="margin-top: 20px; margin-bottom: 10px; position: relative;">
             <input type="search" id="search-box" placeholder="Cari ruangan, kelas, kantor, atau lab..." style="width: 100%; padding: 12px 15px 12px 40px; border: 2px solid #ccc; border-radius: 7px; font-size: 16px; box-sizing: border-box;">
-                <button id="btn-global-fit" title="Sesuaikan Ukuran Denah">🔭</button>
+            <button id="btn-global-fit" title="Sesuaikan Ukuran Denah">🔭</button>
             <span style="position: absolute; left: 15px; top: 14px; color: #888;">🔍</span>
             <div id="search-suggestions" class="suggestions-list"></div>
         </div>
         <p style="font-size:12px; margin-top:15px; color:#666;">Catatan: Denah tidak sesuai dengan skala | Klik pada ruangan untuk melihat detail.</p>
     </div>
-    <!-- MODAL -->
+
+    <!-- ================================================== -->
+    <!-- MODAL POP-UP -->
+    <!-- ================================================== -->
     <div id="room-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">×</span>
             <h2 id="modal-title" style="margin-bottom: 20px;">Nama Ruangan</h2>
     
-            <!-- ============== -->
             <!-- INFO REAL-TIME -->
-            <!-- ============== -->
             <div id="modal-live-info" style="display: none; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
                 <p id="live-info-label" style="margin: 0 0 10px 0; font-weight: bold; color: #007bff;"></p>
                 <div class="live-info-details"> 
@@ -127,8 +141,7 @@
                 </div>
             </div>
             
-
-            <!-- INFO RUANGAN STATIS (WALI KELAS, DLL) -->
+            <!-- INFO RUANGAN STATIS -->
             <div id="modal-static-info">
                 <!-- Info Wali Kelas -->
                 <div id="modal-class-info" class="info-block" style="display: none; margin-bottom: 10px;">
@@ -138,23 +151,43 @@
                         <p id="walas-name" style="margin: 0; font-weight: bold; font-size: 1.1em;"></p>
                     </div>
                 </div>
+                <!-- Info Personel Kunci -->
                 <div id="modal-personnel-info" class="info-block" style="display: none;">
                 </div>
-                
                 <!-- Info Kapasitas -->
                 <div id="modal-capacity-info" class="info-block" style="display: none;">
-                    <p style="margin-top: 10px; font-size: 0.9em;">Kapasitas: <strong id="class-capacity"></strong> Santri</p>
+                     <p style="margin-top: 10px; font-size: 0.9em;">Kapasitas: <strong id="class-capacity"></strong> Santri</p>
                 </div>
-
                 <!-- Deskripsi Umum Ruangan -->
                 <p id="modal-desc" style="margin-top: 15px;"></p>
             </div>
+            
+            <button id="btn-show-schedule" class="action-button" style="display: none; background-color: #28a745; margin-top: 20px;">
+                Lihat Jadwal Hari Ini
+            </button>
+
+            <div id="modal-schedule-container" style="display: none; margin-top: 20px; text-align: left;">
+                <h4 id="schedule-day-title" style="text-align: center; margin-bottom: 10px;"></h4>
+                <table id="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Jam</th>
+                            <th>Mata Pelajaran</th>
+                            <th>Guru</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-table-body">
+                        <!-- Isi jadwal akan digenerate oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>        
             
             <a id="modal-link-button" class="action-button" href="#" target="_blank" style="display: none; margin-top: 25px;">
                 Kunjungi Website
             </a>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
