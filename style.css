@@ -247,3 +247,10 @@
     width: 28%;
     font-weight: 500;
 }
+.schedule-break-row {
+    background-color: #f8f9fa !important; /* Warna abu-abu sangat muda */
+    text-align: center;
+    font-style: italic;
+    color: #6c757d; /* Warna teks abu-abu */
+    font-weight: 500;
+}

@@ -510,18 +510,32 @@ document.getElementById('btn-show-schedule').addEventListener('click', () => {
     scheduleDayTitle.textContent = `Jadwal Hari ${dayNames[dayOfWeek]}`;
     scheduleTableBody.innerHTML = ''; // Kosongkan tabel sebelum diisi
 
-    if (scheduleForToday && scheduleForToday.length > 0) {
-        scheduleForToday.forEach(lesson => {
-            const row = `
+    // ...
+if (scheduleForToday && scheduleForToday.length > 0) {
+    scheduleForToday.forEach(lesson => {
+        let row;
+        // JIKA INI ADALAH JAM ISTIRAHAT
+        if (lesson.subject === "Istirahat") {
+            row = `
+                <tr class="schedule-break-row">
+                    <td>${lesson.time}</td>
+                    <td colspan="2">ISTIRAHAT</td>
+                </tr>
+            `;
+        } 
+        // JIKA INI PELAJARAN BIASA
+        else {
+            row = `
                 <tr>
                     <td>${lesson.time}</td>
                     <td>${lesson.subject}</td>
                     <td>${lesson.teacher || '-'}</td>
                 </tr>
             `;
-            scheduleTableBody.innerHTML += row;
-        });
-    } else {
+        }
+        scheduleTableBody.innerHTML += row;
+    });
+} else { 
         const row = `
             <tr>
                 <td colspan="3" style="text-align: center;">Tidak ada jadwal untuk hari ini.</td>
