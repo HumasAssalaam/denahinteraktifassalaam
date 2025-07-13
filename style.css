@@ -275,3 +275,156 @@
 .btn-contact-whatsapp:hover {
     background-color: #128C7E; /* Warna lebih gelap saat disentuh */
 }
+/* ========================================================================= */
+/* STYLE UNTUK OVERLAY JADWAL GURU (FITUR BARU) */
+/* ========================================================================= */
+
+/* Wadah utama overlay yang menutupi seluruh layar */
+.overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Latar belakang semi-transparan */
+    z-index: 2000; /* Harus di atas modal ruangan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0; /* Mulai dari transparan */
+    visibility: hidden; /* Mulai dari tersembunyi */
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+/* Membuat overlay terlihat dengan transisi fade-in */
+.overlay-container.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+/* Panel konten di tengah overlay */
+.overlay-content {
+    background-color: #ffffff;
+    width: 95%;
+    max-width: 800px; /* Lebar maksimum untuk layar besar */
+    height: 90%;
+    max-height: 700px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column; /* Konten diatur secara vertikal */
+    overflow: hidden; /* Mencegah konten keluar dari border-radius */
+}
+
+/* Tombol tutup di dalam overlay, menggunakan style yang sama dengan modal */
+.overlay-content .close-button {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 32px;
+}
+
+/* Kontainer untuk daftar accordion yang bisa di-scroll */
+#teacher-accordion-container {
+    flex-grow: 1; /* Mengambil sisa ruang vertikal */
+    overflow-y: auto; /* Scroll jika konten melebihi tinggi */
+    padding-right: 15px; /* Memberi ruang untuk scrollbar */
+    margin-right: -15px; /* Trik untuk menyembunyikan scrollbar visual */
+}
+
+/* ========================================================================= */
+/* STYLE UNTUK KOMPONEN ACCORDION */
+/* ========================================================================= */
+
+.accordion-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+/* Header/tombol setiap item accordion */
+.accordion-header {
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    padding: 15px 10px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+    background-color: #f8f9fa;
+}
+
+.accordion-header img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.accordion-header .teacher-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    flex-grow: 1; /* Mengambil ruang agar icon terdorong ke kanan */
+}
+
+.accordion-header .session-count {
+    font-size: 0.9em;
+    color: #888;
+    background-color: #e9ecef;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+/* Ikon [+]/[-] */
+.accordion-header .accordion-icon {
+    font-size: 1.6em;
+    font-weight: 300;
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+/* Rotasi ikon saat accordion aktif */
+.accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+/* Panel konten yang bisa expand/collapse */
+.accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    background-color: #f8f9fa;
+    padding: 0 15px;
+}
+
+.accordion-panel table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.accordion-panel th, .accordion-panel td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+}
+
+.accordion-panel th {
+    background-color: #e9ecef;
+}

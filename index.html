@@ -13,7 +13,6 @@
         <!-- ================================================== -->
         <div id="plan-selatan" class="building-plan">
             
-            <!-- DIperbaiki: Atribut 'src' sekarang menunjuk ke file gambar logo -->
             <img src="images/logo-sekolah.png" alt="Logo Sekolah" class="school-logo">
             
             <h1><span>Denah Interaktif</span><span>Pondok Modern Assalaam</span></h1>
@@ -60,7 +59,6 @@
         <!-- ================================================== -->
         <div id="plan-utara" class="building-plan active">
 
-            <!-- DIperbaiki: Atribut 'src' juga diisi di sini -->
             <img src="images/logo-sekolah.png" alt="Logo Sekolah" class="school-logo">
             
             <h1><span>Denah Interaktif</span><span>Pondok Modern Assalaam</span></h1>
@@ -122,7 +120,7 @@
     </div>
 
     <!-- ================================================== -->
-    <!-- MODAL POP-UP -->
+    <!-- MODAL POP-UP (INFO RUANGAN) -->
     <!-- ================================================== -->
     <div id="room-modal" class="modal">
         <div class="modal-content">
@@ -161,18 +159,26 @@
                 <!-- Deskripsi Umum Ruangan -->
                 <p id="modal-desc" style="margin-top: 15px;"></p>
             </div>
-            <div id="modal-contact-container">
-                <!-- Tombol WhatsApp akan dimasukkan di sini oleh JavaScript -->
-            </div>
-            <!-- =================================== -->
-    
-            <div id="modal-schedule-container" style="display: none;">
-            
-            <button id="btn-show-schedule" class="action-button" style="display: none; background-color: #28a745; margin-top: 20px;">
-                Lihat Jadwal Hari Ini
-            </button>
 
-            <div id="modal-schedule-container" style="display: none; margin-top: 20px; text-align: left;">
+            <!-- KONTAINER UNTUK TOMBOL-TOMBOL AKSI -->
+            <div id="modal-actions-container" style="margin-top: 20px; width: 100%; text-align: center;">
+                <div id="modal-contact-container" style="display: inline-block; margin-bottom: 10px;">
+                    <!-- Tombol WhatsApp akan dimasukkan di sini -->
+                </div>
+                
+                <!-- ▼▼▼ PERUBAHAN 1: TOMBOL BARU UNTUK JADWAL GURU ▼▼▼ -->
+                <button id="btn-show-all-teachers-schedule" class="action-button" style="display: none; background-color: #17a2b8;">
+                    Jadwal Guru Hari Ini
+                </button>
+                <!-- ▲▲▲ AKHIR PERUBAHAN 1 ▲▲▲ -->
+
+                <button id="btn-show-schedule" class="action-button" style="display: none; background-color: #28a745;">
+                    Lihat Jadwal Kelas
+                </button>
+            </div>
+    
+            <!-- KONTAINER JADWAL KELAS -->
+            <div id="modal-schedule-display-container" style="display: none; margin-top: 20px; text-align: left;">
                 <h4 id="schedule-day-title" style="text-align: center; margin-bottom: 10px;"></h4>
                 <table id="schedule-table">
                     <thead>
@@ -194,6 +200,23 @@
         </div>
     </div>
     
+    <!-- ▼▼▼ PERUBAHAN 2: STRUKTUR OVERLAY UNTUK JADWAL SEMUA GURU ▼▼▼ -->
+    <div id="teacher-schedule-overlay" class="overlay-container" style="display: none;">
+        <div class="overlay-content">
+            <span id="close-teacher-schedule-overlay" class="close-button">×</span>
+            <h2 id="overlay-title">Jadwal Guru Aktif</h2>
+            <p id="overlay-date" style="margin-top:-10px; margin-bottom: 20px; color: #666;"></p>
+            <div id="teacher-accordion-container">
+
+            </div>
+            <div id="overlay-no-schedule-message" style="display: none; text-align: center; padding: 40px 20px;">
+                <h3>Hari Ini Libur</h3>
+                <p>Tidak ada jadwal mengajar untuk ditampilkan.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ▲▲▲ AKHIR PERUBAHAN 2 ▲▲▲ -->
+
     <script src="script.js"></script>
 </body>
 </html>

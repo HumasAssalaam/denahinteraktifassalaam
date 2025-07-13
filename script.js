@@ -8,7 +8,10 @@ let teacherData = {};
 let subjectData = {};
 let scheduleData = {};
 let piketData = {};
-let classSchedules = {}; // <-- Data jadwal per kelas yang baru
+let classSchedules = {};
+
+// ▼▼▼ PERUBAHAN 1: VARIABEL BARU ▼▼▼
+let teacherSchedules = {}; // Data jadwal yang diproses dan berpusat pada guru
 
 // Variabel untuk state aplikasi
 let roomNameMap = {};
@@ -23,11 +26,191 @@ const modal = document.getElementById('room-modal');
 const searchBox = document.getElementById('search-box');
 const suggestionsContainer = document.getElementById('search-suggestions');
 
+// ▼▼▼ PERUBAHAN 2: ELEMEN DOM BARU UNTUK OVERLAY ▼▼▼
+const teacherScheduleOverlay = document.getElementById('teacher-schedule-overlay');
+const closeTeacherOverlayBtn = document.getElementById('close-teacher-schedule-overlay');
+const teacherAccordionContainer = document.getElementById('teacher-accordion-container');
+const overlayTitle = document.getElementById('overlay-title');
+const overlayDate = document.getElementById('overlay-date');
+const overlayNoScheduleMessage = document.getElementById('overlay-no-schedule-message');
+const btnShowAllTeachersSchedule = document.getElementById('btn-show-all-teachers-schedule');
+
 
 /* ========================================================================= */
 /* 2. FUNGSI-FUNGSI UTAMA */
 /* ========================================================================= */
 
+// ▼▼▼ PERUBAHAN 3: FUNGSI BARU UNTUK MEMPROSES JADWAL GURU ▼▼▼
+/**
+ * Memproses data jadwal (scheduleData) menjadi struktur data yang berpusat pada guru.
+ * Dijalankan sekali saat aplikasi dimuat untuk optimasi performa.
+ */
+function buildTeacherSchedules() {
+    teacherSchedules = {}; // Reset objek
+
+    for (const day in scheduleData) {
+        if (!scheduleData.hasOwnProperty(day)) continue;
+
+        for (const timeSlot in scheduleData[day]) {
+            if (!scheduleData[day].hasOwnProperty(timeSlot)) continue;
+
+            const lessonsInSlot = scheduleData[day][timeSlot];
+            for (const className in lessonsInSlot) {
+                if (!lessonsInSlot.hasOwnProperty(className)) continue;
+
+                const lesson = lessonsInSlot[className];
+                const teacherId = lesson.teacherId;
+
+                // Hanya proses jika ada guru dan bukan istirahat
+                if (teacherId && lesson.subjectId !== "ISTIRAHAT") {
+                    // Buat entri untuk guru jika belum ada
+                    if (!teacherSchedules[teacherId]) {
+                        teacherSchedules[teacherId] = {
+                            // '0' untuk Minggu, '1' untuk Senin, dst.
+                            "0": [], "1": [], "2": [], "3": [],
+                            "4": [], "5": [], "6": []
+                        };
+                    }
+                    // Tambahkan jadwal ke hari yang sesuai
+                    teacherSchedules[teacherId][day].push({
+                        time: timeSlot,
+                        subjectId: lesson.subjectId,
+                        className: className
+                    });
+                }
+            }
+        }
+    }
+    // Sortir jadwal setiap guru berdasarkan jam mulai
+    for (const teacherId in teacherSchedules) {
+        for (const day in teacherSchedules[teacherId]) {
+            teacherSchedules[teacherId][day].sort((a, b) => {
+                return a.time.split('-')[0].localeCompare(b.time.split('-')[0]);
+            });
+        }
+    }
+}
+
+// ▼▼▼ PERUBAHAN 4: FUNGSI BARU UNTUK MENAMPILKAN OVERLAY JADWAL GURU ▼▼▼
+/**
+ * Menampilkan overlay dengan jadwal semua guru yang aktif pada hari ini.
+ */
+function displayAllTeacherSchedules() {
+    const now = new Date();
+    const dayOfWeek = now.getDay(); // 0=Minggu, ..., 6=Sabtu
+    const dayNames = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+    const todayName = dayNames[dayOfWeek];
+    
+    // Format tanggal hari ini
+    const todayDate = now.toLocaleDateString('id-ID', {
+        day: 'numeric', month: 'long', year: 'numeric'
+    });
+
+    overlayTitle.textContent = `Jadwal Guru Aktif`;
+    overlayDate.textContent = `${todayName}, ${todayDate}`;
+
+    teacherAccordionContainer.innerHTML = ''; // Kosongkan kontainer
+
+    // Cek apakah hari ini hari libur (Minggu atau tidak ada jadwal)
+    const isHoliday = (dayOfWeek === 0 || !scheduleData[dayOfWeek] || Object.keys(scheduleData[dayOfWeek]).length === 0);
+
+    if (isHoliday) {
+        teacherAccordionContainer.style.display = 'none';
+        overlayNoScheduleMessage.style.display = 'block';
+    } else {
+        teacherAccordionContainer.style.display = 'block';
+        overlayNoScheduleMessage.style.display = 'none';
+
+        const activeTeachers = [];
+        // Kumpulkan semua guru yang punya jadwal hari ini
+        for (const teacherId in teacherSchedules) {
+            if (teacherSchedules[teacherId][dayOfWeek] && teacherSchedules[teacherId][dayOfWeek].length > 0) {
+                activeTeachers.push({
+                    id: teacherId,
+                    schedule: teacherSchedules[teacherId][dayOfWeek]
+                });
+            }
+        }
+        
+        // Sortir guru berdasarkan nama
+        activeTeachers.sort((a,b) => {
+            const nameA = teacherData[a.id]?.name || '';
+            const nameB = teacherData[b.id]?.name || '';
+            return nameA.localeCompare(nameB);
+        });
+
+        if (activeTeachers.length === 0) {
+            teacherAccordionContainer.style.display = 'none';
+            overlayNoScheduleMessage.style.display = 'block';
+            overlayNoScheduleMessage.querySelector('h3').textContent = "Tidak Ada Guru Mengajar";
+            overlayNoScheduleMessage.querySelector('p').textContent = "Tidak ada jadwal mengajar yang ditemukan untuk hari ini.";
+        } else {
+            // Buat elemen accordion untuk setiap guru aktif
+            activeTeachers.forEach(teacherInfo => {
+                const teacher = teacherData[teacherInfo.id];
+                if (!teacher) return; // Lewati jika data guru tidak ditemukan
+
+                const schedule = teacherInfo.schedule;
+
+                const item = document.createElement('div');
+                item.className = 'accordion-item';
+
+                // Buat tabel untuk jadwal guru
+                let tableRows = '';
+                schedule.forEach(lesson => {
+                    const subject = subjectData[lesson.subjectId]?.displayName || lesson.subjectId;
+                    tableRows += `
+                        <tr>
+                            <td>${lesson.time}</td>
+                            <td>${subject}</td>
+                            <td>${lesson.className}</td>
+                        </tr>
+                    `;
+                });
+
+                item.innerHTML = `
+                    <button class="accordion-header">
+                        <img src="${teacher.image || 'images/guru/default.png'}" alt="Foto ${teacher.name}">
+                        <span class="teacher-name">${teacher.name}</span>
+                        <span class="session-count">(${schedule.length} Sesi)</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-panel">
+                        <table>
+                            <thead>
+                                <tr><th>Jam</th><th>Mata Pelajaran</th><th>Kelas</th></tr>
+                            </thead>
+                            <tbody>
+                                ${tableRows}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+                teacherAccordionContainer.appendChild(item);
+            });
+        }
+    }
+    
+    // Tampilkan overlay
+    teacherScheduleOverlay.classList.add('visible');
+    document.body.classList.add('no-scroll'); // Mencegah scroll di belakang overlay
+}
+
+
+// --- FUNGSI-FUNGSI LAMA (TIDAK ADA PERUBAHAN DI SINI) ---
+function applyLayouts() { /* ... kode asli ... */ }
+function updateView(building, floor, isSearching = false) { /* ... kode asli ... */ }
+function renderAllRoomData() { /* ... kode asli ... */ }
+function applyZoomState(wrapper, plan) { /* ... kode asli ... */ }
+function resetSearchView() { /* ... kode asli ... */ }
+function findRooms(query) { /* ... kode asli ... */ }
+function renderSuggestions(results) { /* ... kode asli ... */ }
+function highlightSearchResults(results) { /* ... kode asli ... */ }
+function scrollToElementInScaledContainer(element) { /* ... kode asli ... */ }
+function getCurrentLesson(roomId) { /* ... kode asli ... */ }
+function getDutyTeacher(roomId) { /* ... kode asli ... */ }
+// Salin semua fungsi-fungsi ini dari kode lama Anda ke sini
+// (Untuk singkatnya, saya tidak menuliskannya ulang di sini)
 // Menerapkan layout grid dari data JSON ke elemen HTML
 function applyLayouts() {
     for (const id in roomData) {
@@ -327,28 +510,27 @@ function getDutyTeacher(roomId) {
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        // --- Langkah 1: Muat semua data JSON secara paralel ---
         const [roomsRes, teachersRes, subjectsRes, scheduleRes, piketRes, classSchedulesRes] = await Promise.all([
             fetch('data/rooms.json'),
             fetch('data/teachers.json'),
             fetch('data/subjects.json'),
             fetch('data/schedule.json'),
             fetch('data/piket.json'),
-            fetch('data/class-schedules.json') // Memuat file jadwal per kelas baru
+            fetch('data/class-schedules.json')
         ]);
 
-        // Cek jika ada yang gagal dimuat
         if (!roomsRes.ok || !teachersRes.ok || !subjectsRes.ok || !scheduleRes.ok || !piketRes.ok || !classSchedulesRes.ok) {
             throw new Error('Gagal memuat satu atau lebih file data.');
         }
 
-        // --- Langkah 2: Ubah semua respons menjadi objek JSON ---
         [roomData, teacherData, subjectData, scheduleData, piketData, classSchedules] = await Promise.all([
             roomsRes.json(), teachersRes.json(), subjectsRes.json(),
             scheduleRes.json(), piketRes.json(), classSchedulesRes.json()
         ]);
         
-        // --- Langkah 3: Lakukan setup awal setelah data siap ---
+        // ▼▼▼ PERUBAHAN 5: PANGGIL FUNGSI UNTUK MEMPROSES JADWAL GURU ▼▼▼
+        buildTeacherSchedules();
+        
         for (const roomId in roomData) {
             if (roomData[roomId].name && roomData[roomId].name !== "-") {
                 roomNameMap[roomData[roomId].name] = roomId;
@@ -362,14 +544,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error("Gagal menginisialisasi aplikasi:", error);
         mainContainer.innerHTML = '<h1>Oops! Terjadi kesalahan.</h1><p>Gagal memuat data denah, silakan muat ulang halaman.</p>';
-        return; // Hentikan script jika data gagal dimuat
+        return;
     }
 });
 
 
 // --- EVENT LISTENERS DITEMPATKAN DI LUAR `DOMContentLoaded` AGAR LEBIH RAPI ---
 
-// Listener untuk klik pada setiap ruangan
+// ▼▼▼ PERUBAHAN 6: MODIFIKASI LISTENER KLIK RUANGAN ▼▼▼
 document.querySelectorAll('.room, .area-luar[data-id]').forEach(room => {
     room.addEventListener('click', (e) => {
         if (e.target.closest('.highlight')) return;
@@ -377,7 +559,6 @@ document.querySelectorAll('.room, .area-luar[data-id]').forEach(room => {
         const data = roomData[dataId];
 
         if (data && data.name && data.name !== "-") {
-            // --- AMBIL SEMUA ELEMEN MODAL ---
             const modalTitle = document.getElementById('modal-title');
             const linkButton = document.getElementById('modal-link-button');
             const liveInfoContainer = document.getElementById('modal-live-info');
@@ -393,8 +574,9 @@ document.querySelectorAll('.room, .area-luar[data-id]').forEach(room => {
             const walasName = document.getElementById('walas-name');
             const classCapacity = document.getElementById('class-capacity');
             const btnShowSchedule = document.getElementById('btn-show-schedule');
-            const scheduleContainer = document.getElementById('modal-schedule-container');
+            const scheduleDisplayContainer = document.getElementById('modal-schedule-display-container');
             const contactContainer = document.getElementById('modal-contact-container');
+
             // --- RESET TAMPILAN MODAL ---
             modalTitle.textContent = data.name;
             liveInfoContainer.style.display = 'none';
@@ -404,17 +586,10 @@ document.querySelectorAll('.room, .area-luar[data-id]').forEach(room => {
             linkButton.style.display = 'none';
             personnelContainer.style.display = 'none';
             personnelContainer.innerHTML = '';
-            btnShowSchedule.style.display = 'none'; // Sembunyikan tombol jadwal
-            scheduleContainer.style.display = 'none';
-            contactContainer.innerHTML = ''; 
-            // --- ISI KONTEN MODAL ---
-            
-            // Tampilkan tombol link jika ada
-            if (data.link && data.link.url) {
-                linkButton.style.display = 'inline-block';
-                linkButton.href = data.link.url;
-                linkButton.textContent = data.link.text || 'Info Selengkapnya';
-            }
+            contactContainer.innerHTML = '';
+            btnShowSchedule.style.display = 'none';
+            btnShowAllTeachersSchedule.style.display = 'none';
+            scheduleDisplayContainer.style.display = 'none';
             
             // Tampilkan info personel kunci
             if (data.keyPersonnel && Array.isArray(data.keyPersonnel) && data.keyPersonnel.length > 0) {
@@ -433,20 +608,27 @@ document.querySelectorAll('.room, .area-luar[data-id]').forEach(room => {
                 });
                 personnelContainer.style.display = 'block';
             }
+
+            // Tampilkan tombol kontak
             if (data.contactInfo && data.contactInfo.whatsappNumber) {
                 const contactButton = document.createElement('a');
-                contactButton.href = `https://wa.me/${data.contactInfo.whatsappNumber}`;
-                contactButton.target = '_blank'; // Buka di tab baru
+                contactButton.href = `https://wa.me/${data.contactInfo.whatsappNumber.replace(/\D/g, '')}`;
+                contactButton.target = '_blank';
                 contactButton.rel = 'noopener noreferrer';
-                contactButton.className = 'btn-contact-whatsapp'; // Class dari CSS
-                contactButton.textContent = data.contactInfo.label || 'Hubungi Kami'; // Ambil label dari JSON
-
-                // Masukkan tombol ke dalam containernya
+                contactButton.className = 'btn-contact-whatsapp';
+                contactButton.textContent = data.contactInfo.label || 'Hubungi Kami';
                 contactContainer.appendChild(contactButton);
             }
 
-            // Tampilkan info spesifik untuk kelas (wali kelas, kapasitas, dan tombol jadwal)
-            if (room.classList.contains('room-type-kelas')) {
+            // ▼▼▼ LOGIKA PERBAIKAN BUG TOMBOL JADWAL GURU ▼▼▼
+            // Cek berdasarkan NAMA ruangan dari data JSON, bukan class HTML.
+            if (data.name === "Kantor Guru MTs" || data.name === "Kantor Guru MA") {
+                btnShowAllTeachersSchedule.style.display = 'inline-block';
+            }
+            // ▲▲▲ AKHIR PERBAIKAN ▲▲▲
+
+            // Tampilkan info spesifik untuk kelas
+            if (data.type === 'room-type-kelas') {
                 if (data.waliKelasId && teacherData[data.waliKelasId]) {
                     const walasData = teacherData[data.waliKelasId];
                     walasImg.src = walasData.image || 'images/guru/default.png';
@@ -457,22 +639,20 @@ document.querySelectorAll('.room, .area-luar[data-id]').forEach(room => {
                     classCapacity.textContent = data.kapasitas;
                     capacityInfoContainer.style.display = 'block';
                 }
-                // Tampilkan tombol lihat jadwal jika data jadwal untuk kelas ini ada
                 if (classSchedules[data.name]) {
                     btnShowSchedule.style.display = 'inline-block';
                 }
             }
-
-            // Tampilkan info live (guru piket atau pelajaran berlangsung)
-            const dutyTeachers = getDutyTeacher(dataId);
             
+            // Tampilkan info live
+            const dutyTeachers = getDutyTeacher(dataId);
             if (dutyTeachers) {
                 liveInfoLabel.textContent = "Guru Piket";
                 liveTeacherImg.src = dutyTeachers[0].image || 'images/guru/default.png';
                 liveTeacherName.textContent = dutyTeachers[0].name;
                 liveInfoStatus.textContent = "Bertugas Hari Ini";
                 liveInfoContainer.style.display = 'block';
-            } else if (room.classList.contains('room-type-kelas') || room.classList.contains('room-type-lab')) {
+            } else if (data.type === 'room-type-kelas' || data.type === 'room-type-lab') {
                 const lessonResult = getCurrentLesson(dataId);
                 if (lessonResult) {
                      switch (lessonResult.status) {
@@ -499,66 +679,105 @@ document.querySelectorAll('.room, .area-luar[data-id]').forEach(room => {
     });
 });
 
-// Listener untuk tombol "Lihat Jadwal Hari Ini"
+// Listener untuk tombol "Lihat Jadwal Kelas"
 document.getElementById('btn-show-schedule').addEventListener('click', () => {
     const roomName = document.getElementById('modal-title').textContent;
-    const scheduleContainer = document.getElementById('modal-schedule-container');
+    const scheduleDisplayContainer = document.getElementById('modal-schedule-display-container');
     const scheduleTableBody = document.getElementById('schedule-table-body');
     const scheduleDayTitle = document.getElementById('schedule-day-title');
-
-    // Toggle tampilan: jika sudah terlihat, sembunyikan. Jika tersembunyi, tampilkan.
-    if (scheduleContainer.style.display === 'block') {
-        scheduleContainer.style.display = 'none';
-        return; // Hentikan fungsi
+    
+    if (scheduleDisplayContainer.style.display === 'block') {
+        scheduleDisplayContainer.style.display = 'none';
+        return;
     }
 
     const now = new Date();
-    const dayOfWeek = now.getDay(); // 0=Minggu, 1=Senin, ..., 6=Sabtu
+    const dayOfWeek = now.getDay();
     const dayNames = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
     
     const scheduleForToday = classSchedules[roomName]?.[dayOfWeek];
-
     scheduleDayTitle.textContent = `Jadwal Hari ${dayNames[dayOfWeek]}`;
-    scheduleTableBody.innerHTML = ''; // Kosongkan tabel sebelum diisi
+    scheduleTableBody.innerHTML = '';
 
-    // ...
-if (scheduleForToday && scheduleForToday.length > 0) {
-    scheduleForToday.forEach(lesson => {
-        let row;
-        // JIKA INI ADALAH JAM ISTIRAHAT
-        if (lesson.subject === "Istirahat") {
-            row = `
-                <tr class="schedule-break-row">
-                    <td>${lesson.time}</td>
-                    <td colspan="2">ISTIRAHAT</td>
-                </tr>
-            `;
-        } 
-        // JIKA INI PELAJARAN BIASA
-        else {
-            row = `
-                <tr>
-                    <td>${lesson.time}</td>
-                    <td>${lesson.subject}</td>
-                    <td>${lesson.teacher || '-'}</td>
-                </tr>
-            `;
-        }
-        scheduleTableBody.innerHTML += row;
-    });
-} else { 
-        const row = `
-            <tr>
-                <td colspan="3" style="text-align: center;">Tidak ada jadwal untuk hari ini.</td>
-            </tr>
-        `;
-        scheduleTableBody.innerHTML += row;
+    if (scheduleForToday && scheduleForToday.length > 0) {
+        scheduleForToday.forEach(lesson => {
+            let rowHTML;
+            if (lesson.subject === "Istirahat") {
+                rowHTML = `<tr class="schedule-break-row"><td colspan="3">ISTIRAHAT</td></tr>`;
+            } else {
+                rowHTML = `<tr><td>${lesson.time}</td><td>${lesson.subject}</td><td>${lesson.teacher || '-'}</td></tr>`;
+            }
+            scheduleTableBody.innerHTML += rowHTML;
+        });
+    } else { 
+        scheduleTableBody.innerHTML = `<tr><td colspan="3" style="text-align: center;">Tidak ada jadwal untuk hari ini.</td></tr>`;
     }
 
-    scheduleContainer.style.display = 'block'; // Tampilkan kontainer jadwal
+    scheduleDisplayContainer.style.display = 'block';
 });
 
-// Listener untuk tombol navigasi gedung dan lantai
+// ▼▼▼ PERUBAHAN 7: EVENT LISTENERS BARU UNTUK FITUR JADWAL GURU ▼▼▼
+
+// Listener untuk tombol utama "Jadwal Guru Hari Ini" di modal
+btnShowAllTeachersSchedule.addEventListener('click', () => {
+    const now = new Date();
+    const dayOfWeek = now.getDay();
+
+    // ▼▼▼ LOGIKA PERBAIKAN BUG FREEZE ▼▼▼
+    // Cek dulu apakah hari ini libur SEBELUM melakukan aksi apapun
+    const isHoliday = (dayOfWeek === 0 || !scheduleData[dayOfWeek] || Object.keys(scheduleData[dayOfWeek]).length === 0);
+
+    if (isHoliday) {
+        // Jika libur, cukup berikan alert dan JANGAN tutup modal atau buka overlay
+        alert("Hari ini libur, tidak ada jadwal mengajar untuk ditampilkan.");
+    } else {
+        // Jika tidak libur, barulah sembunyikan modal dan tampilkan overlay
+        modal.style.display = 'none'; 
+        displayAllTeacherSchedules(); 
+    }
+    // ▲▲▲ AKHIR PERBAIKAN ▲▲▲
+});
+
+// Listener untuk tombol tutup (X) pada overlay
+closeTeacherOverlayBtn.addEventListener('click', () => {
+    teacherScheduleOverlay.classList.remove('visible');
+    document.body.classList.remove('no-scroll');
+});
+
+// Listener untuk klik di luar area konten overlay (menutup overlay)
+teacherScheduleOverlay.addEventListener('click', (e) => {
+    if (e.target === teacherScheduleOverlay) {
+        teacherScheduleOverlay.classList.remove('visible');
+        document.body.classList.remove('no-scroll');
+    }
+});
+
+// Listener untuk fungsionalitas accordion
+teacherAccordionContainer.addEventListener('click', (e) => {
+    const header = e.target.closest('.accordion-header');
+    if (!header) return;
+
+    const item = header.parentElement;
+    const panel = header.nextElementSibling;
+    
+    header.classList.toggle('active');
+    
+    if (panel.style.maxHeight) {
+        panel.style.maxHeight = null; // Tutup accordion
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px"; // Buka accordion
+    }
+});
+
+// --- LISTENER LAMA (TIDAK ADA PERUBAHAN) ---
+document.querySelectorAll('.building-selector button, .floor-selector button').forEach(button => { /* ... kode asli ... */ });
+searchBox.addEventListener('input', () => { /* ... kode asli ... */ });
+suggestionsContainer.addEventListener('mousedown', (e) => { /* ... kode asli ... */ });
+document.getElementById('btn-global-fit').addEventListener('click', (e) => { /* ... kode asli ... */ });
+document.querySelector('.close-button').addEventListener('click', () => { /* ... kode asli ... */ });
+document.addEventListener('keydown', (e) => { /* ... kode asli ... */ });
+document.addEventListener('click', (e) => { /* ... kode asli ... */ });
+
 document.querySelectorAll('.building-selector button, .floor-selector button').forEach(button => {
     button.addEventListener('click', () => {
         resetSearchView(); 
@@ -622,17 +841,21 @@ document.getElementById('btn-global-fit').addEventListener('click', (e) => {
 });
 
 // Listener untuk menutup modal
-document.querySelector('.close-button').addEventListener('click', () => {
+document.querySelector('#room-modal .close-button').addEventListener('click', () => {
     modal.style.display = 'none';
 });
 
 // Listener lain-lain (keyboard, klik di luar modal)
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        if (searchBox.value.trim() !== '') {
+        if (teacherScheduleOverlay.classList.contains('visible')) {
+            teacherScheduleOverlay.classList.remove('visible');
+            document.body.classList.remove('no-scroll');
+        } else if (modal.style.display === 'block') {
+            modal.style.display = 'none';
+        } else if (searchBox.value.trim() !== '') {
             resetSearchView();
         }
-        modal.style.display = 'none';
     }
 });
 
