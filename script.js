@@ -1,26 +1,13 @@
-/* ========================================================================= */
-/* SCRIPT.JS - VERSI STABIL TERAKHIR (SEBELUM FITUR JADWAL GURU) */
-/* VERSI REFAKTORISASI UNTUK KETERBACAAN */
-/* ========================================================================= */
-
-// =========================================================================
-// 1. STATE GLOBAL, KONSTANTA, & ELEMEN DOM
-// =========================================================================
-
-// Variabel untuk menyimpan data dari file JSON
 let roomData = {};
 let teacherData = {};
 let subjectData = {};
 let scheduleData = {};
 let piketData = {};
 let classSchedules = {};
-
-// Variabel untuk melacak state tampilan saat ini
 let currentBuilding = 'utara';
 let currentFloor = 1;
-let isZoomedOut = false; // Status untuk zoom in/out denah
+let isZoomedOut = false; 
 
-// Elemen DOM yang sering diakses
 const mainContainer = document.getElementById('main-container');
 const modal = document.getElementById('room-modal');
 const searchBox = document.getElementById('search-box');
@@ -45,9 +32,6 @@ function applyLayouts() {
     }
 }
 
-/**
- * Merender nama dan tipe (kelas CSS) untuk semua elemen ruangan pada denah.
- */
 function renderAllRoomData() {
     document.querySelectorAll(".room, .area-luar[data-id]").forEach(element => {
         const roomId = element.dataset.id || element.id;
@@ -69,13 +53,6 @@ function renderAllRoomData() {
 
 
 /* --- FUNGSI PENGELOLA TAMPILAN (VIEW) --- */
-
-/**
- * Memperbarui tampilan denah berdasarkan gedung dan lantai yang dipilih.
- * @param {string} buildingId - ID gedung ('utara' atau 'selatan').
- * @param {number|string} floorNumber - Nomor lantai.
- * @param {boolean} [isSearchUpdate=false] - Tandai true jika pembaruan ini dari hasil pencarian, untuk mencegah reset visibility.
- */
 function updateView(buildingId, floorNumber, isSearchUpdate = false) {
     // 1. Update state global
     currentBuilding = buildingId;
@@ -127,12 +104,6 @@ function updateView(buildingId, floorNumber, isSearchUpdate = false) {
     }
 }
 
-
-/**
- * Menerapkan atau menghapus state zoom-out pada denah.
- * @param {HTMLElement} planWrapper - Elemen pembungkus denah yang bisa di-scroll.
- * @param {HTMLElement} floorPlan - Elemen grid denah itu sendiri.
- */
 function applyZoomState(planWrapper, floorPlan) {
     if (!planWrapper || !floorPlan) return;
 
@@ -159,9 +130,6 @@ function applyZoomState(planWrapper, floorPlan) {
 
 /* --- FUNGSI PENCARIAN (SEARCH) --- */
 
-/**
- * Mereset tampilan pencarian, menghapus highlight, dan mengembalikan ke view default.
- */
 function resetSearchView() {
     searchBox.value = "";
     suggestionsContainer.classList.remove("visible");
@@ -205,23 +173,17 @@ function findRooms(query) {
         }
 
         if (score > 0) {
-            // Beri skor tambahan jika hasil ada di gedung yang sedang aktif
+            // skor tambahan jika hasil ada di gedung yang sedang aktif
             if (roomId.startsWith(currentBuilding)) {
                 score += 0.5;
             }
             results.push({ id: roomId, ...roomInfo, score: score });
         }
     }
-
-    // Urutkan hasil dari skor tertinggi ke terendah
     return results.sort((a, b) => b.score - a.score);
 }
 
 
-/**
- * Menampilkan daftar saran pencarian di bawah search box.
- * @param {Array<object>} searchResults - Array hasil dari findRooms.
- */
 function renderSuggestions(searchResults) {
     suggestionsContainer.innerHTML = "";
     if (searchResults.length === 0) {
@@ -246,10 +208,6 @@ function renderSuggestions(searchResults) {
 }
 
 
-/**
- * Menyorot hasil pencarian di denah, meredupkan yang lain, dan pindah ke view yang relevan.
- * @param {Array<object>} searchResults - Array hasil dari findRooms.
- */
 function highlightSearchResults(searchResults) {
     document.querySelectorAll(".room, .area-luar").forEach(el => el.classList.remove("highlight", "dimmed"));
 
@@ -263,15 +221,10 @@ function highlightSearchResults(searchResults) {
     const [building, floorInfo] = topResultId.split("-lt");
     const floor = floorInfo.charAt(0);
 
-    // Pindahkan view ke lokasi hasil teratas, tandai sebagai update dari pencarian
     updateView(building, floor, true);
-
-    // Terapkan highlight dan dimmed pada lantai yang relevan
     document.querySelectorAll(`#plan-${building} .room, #plan-${building} .area-luar`).forEach(element => {
         const elementId = element.id || element.dataset.id;
         if (!elementId) return;
-
-        // Cek apakah elemen ada di lantai yang benar
         if (elementId.startsWith(`${building}-lt${floor}`)) {
             element.classList.remove("is-invisible"); // Pastikan terlihat
             if (resultIds.has(elementId)) {
@@ -288,11 +241,6 @@ function highlightSearchResults(searchResults) {
 
 /* --- FUNGSI PENGAMBILAN DATA LIVE (JADWAL & PIKET) --- */
 
-/**
- * Mendapatkan status pelajaran yang sedang berlangsung di sebuah ruangan.
- * @param {string} roomId - ID ruangan.
- * @returns {object|null} Objek status atau null jika data tidak ditemukan.
- */
 function getCurrentLesson(roomId) {
     const now = new Date();
     const dayOfWeek = now.getDay(); // 0 = Minggu, 1 = Senin, ...
@@ -333,21 +281,13 @@ function getCurrentLesson(roomId) {
         }
     }
 
-    // Jika tidak ada pelajaran spesifik di ruangan ini, tapi masih jam sekolah
     if (isSchoolHours) {
         return { status: "EMPTY_ROOM" };
     }
-
-    // Jika di luar semua jam pelajaran
     return { status: "OUTSIDE_SCHOOL_HOURS" };
 }
 
 
-/**
- * Mendapatkan data guru piket untuk ruangan tertentu (misal: Ruang Guru).
- * @param {string} roomId - ID ruangan.
- * @returns {Array<object>|null} Array objek guru yang piket atau null.
- */
 function getDutyTeacher(roomId) {
     const now = new Date();
     const dayOfWeek = now.getDay();
@@ -384,17 +324,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             fetch("data/class-schedules.json")
         ]);
 
-        // Cek apakah semua request berhasil
         for (const response of responses) {
             if (!response.ok) {
                 throw new Error(`Gagal memuat file data: ${response.url}`);
             }
         }
-
-        // Parse semua JSON
         [roomData, teacherData, subjectData, scheduleData, piketData, classSchedules] = await Promise.all(responses.map(res => res.json()));
-
-        // Setelah semua data siap, jalankan fungsi setup
         applyLayouts();
         renderAllRoomData();
         updateView(currentBuilding, currentFloor);
@@ -409,12 +344,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 // =========================================================================
 // 4. EVENT LISTENERS
 // =========================================================================
-
-/* --- EVENT LISTENER UTAMA --- */
-
-/**
- * Menangani klik pada elemen ruangan untuk membuka modal detail.
- */
 document.querySelectorAll('.room, .area-luar[data-id]').forEach(roomElement => {
     roomElement.addEventListener('click', () => {
         const roomId = roomElement.dataset.id || roomElement.id;
@@ -427,14 +356,11 @@ document.querySelectorAll('.room, .area-luar[data-id]').forEach(roomElement => {
     });
 });
 
-/**
- * Menangani klik pada tombol lihat jadwal kelas di dalam modal.
- */
+
 document.getElementById('btn-show-schedule').addEventListener('click', () => {
     const roomName = document.getElementById('modal-title').textContent;
     const scheduleContainer = document.getElementById('modal-schedule-display-container');
 
-    // Toggle tampilan jadwal
     if (scheduleContainer.style.display === 'block') {
         scheduleContainer.style.display = 'none';
         return;
@@ -443,11 +369,6 @@ document.getElementById('btn-show-schedule').addEventListener('click', () => {
     displayClassSchedule(roomName);
 });
 
-
-/**
- * Menangani klik pada tombol pemilih gedung dan lantai.
- */
-// Listener untuk tombol navigasi gedung dan lantai
 document.querySelectorAll('.building-selector button, .floor-selector button').forEach(button => {
     button.addEventListener('click', () => {
         resetSearchView(); 
@@ -458,7 +379,6 @@ document.querySelectorAll('.building-selector button, .floor-selector button').f
     });
 });
 
-// Listener untuk fungsionalitas pencarian
 searchBox.addEventListener('input', () => {
     const query = searchBox.value.trim();
     if (query.length === 0) {
@@ -470,7 +390,6 @@ searchBox.addEventListener('input', () => {
     highlightSearchResults(searchResults);
 });
 
-// Listener untuk klik sugesti pencarian
 suggestionsContainer.addEventListener('mousedown', (e) => {
     if (e.button !== 0) return;
     const listItem = e.target.closest('li');
@@ -506,12 +425,9 @@ document.getElementById('btn-global-fit').addEventListener('click', (e) => {
     }
 });
 
-// Listener untuk menutup modal
 document.querySelector('#room-modal .close-button').addEventListener('click', () => {
     modal.style.display = 'none';
 });
-
-// Listener lain-lain (keyboard, klik di luar modal)
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (modal.style.display === 'block') {
@@ -532,10 +448,6 @@ document.addEventListener('click', (e) => {
         resetSearchView();
     }
 });
-
-/**
- * Menangani penutupan modal.
- */
 document.querySelector('#room-modal .close-button').addEventListener('click', () => {
     modal.style.display = 'none';
 });
@@ -545,14 +457,6 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-
-/* --- FUNGSI-FUNGSI PEMBANTU UNTUK MODAL --- */
-
-/**
- * Membuka dan mengisi konten modal dengan informasi ruangan yang dipilih.
- * @param {string} roomId - ID unik ruangan.
- * @param {object} roomInfo - Objek data untuk ruangan tersebut.
- */
 function openRoomModal(roomId, roomInfo) {
     resetModalContent();
 
@@ -568,10 +472,6 @@ function openRoomModal(roomId, roomInfo) {
     
     modal.style.display = 'block';
 }
-
-/**
- * Mereset semua konten dinamis di dalam modal ke keadaan awal.
- */
 function resetModalContent() {
     // Sembunyikan semua kontainer dinamis
     document.getElementById('modal-live-info').style.display = 'none';
@@ -641,19 +541,14 @@ function populateClassSpecificInfo(roomInfo) {
         document.getElementById('walas-name').textContent = walasData.name;
         document.getElementById('modal-class-info').style.display = 'block';
     }
-
-    // Tampilkan info Kapasitas
     if (roomInfo.kapasitas) {
         document.getElementById('class-capacity').textContent = roomInfo.kapasitas;
         document.getElementById('modal-capacity-info').style.display = 'block';
     }
-
-    // Tampilkan tombol lihat jadwal jika data jadwal tersedia
     if (classSchedules[roomInfo.name]) {
         document.getElementById('btn-show-schedule').style.display = 'inline-block';
     }
 }
-
 /**
  * Menampilkan informasi real-time (pelajaran berlangsung atau guru piket).
  * @param {string} roomId - ID ruangan.
@@ -674,7 +569,6 @@ function populateLiveInfo(roomId, roomInfo) {
         return;
     }
 
-    // Jika bukan ruang piket, cek pelajaran berlangsung (hanya untuk kelas & lab)
     if (roomInfo.type === 'room-type-kelas' || roomInfo.type === 'room-type-lab') {
         const lessonResult = getCurrentLesson(roomId);
         if (lessonResult) {
@@ -701,10 +595,6 @@ function populateLiveInfo(roomId, roomInfo) {
     }
 }
 
-/**
- * Membuat dan menampilkan tabel jadwal pelajaran untuk hari ini di modal.
- * @param {string} roomName - Nama kelas/ruangan.
- */
 function displayClassSchedule(roomName) {
     const scheduleTableBody = document.getElementById('schedule-table-body');
     const scheduleDayTitle = document.getElementById('schedule-day-title');
@@ -716,7 +606,7 @@ function displayClassSchedule(roomName) {
     const scheduleForToday = classSchedules[roomName]?.[dayOfWeek];
 
     scheduleDayTitle.textContent = `Jadwal Hari ${dayNames[dayOfWeek]}`;
-    scheduleTableBody.innerHTML = ''; // Kosongkan tabel sebelum diisi
+    scheduleTableBody.innerHTML = ''; 
 
     if (scheduleForToday?.length > 0) {
         scheduleForToday.forEach(lesson => {
