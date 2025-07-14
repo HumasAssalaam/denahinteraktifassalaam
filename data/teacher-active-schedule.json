@@ -1,0 +1,728 @@
+{
+  "1": [
+    {
+      "teacherId": "T30",
+      "teacherName": "Arfan Zafrullah, S.Pd.",
+      "teacherImage": "images/guru/ustarfan.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Bahasa Indonesia", "class": "Kelas 12-IPS" },
+        { "time": "10:00-12:00", "subject": "Bahasa Indonesia", "class": "Kelas 11-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T13",
+      "teacherName": "Budiarti, S.Ag.",
+      "teacherImage": "images/guru/usthbudiarti.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "IPS (Geografi)", "class": "Kelas 10-1" }
+      ]
+    },
+    {
+      "teacherId": "T16",
+      "teacherName": "Eni Erawati, S.Pd.",
+      "teacherImage": "images/guru/ustheni.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Matematika", "class": "Kelas 11-MIPA" },
+        { "time": "10:00-12:00", "subject": "Matematika", "class": "Kelas 10-2" },
+        { "time": "13:00-14:20", "subject": "Matematika Lanjutan", "class": "Kelas 12-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T33",
+      "teacherName": "Fitrotul Khasanah, S.Pd.",
+      "teacherImage": "images/guru/usthfitroh.webp",
+      "schedule": [
+        { "time": "08:20-09:40", "subject": "Matematika", "class": "Kelas 7-A" },
+        { "time": "10:40-12:00", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 8-A" }
+      ]
+    },
+    {
+      "teacherId": "T14",
+      "teacherName": "Fuad Zen, S.Pd.I",
+      "teacherImage": "images/guru/ustzen.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Bahasa Arab", "class": "Kelas 12-MIPA" },
+        { "time": "08:20-09:40", "subject": "Aqidah Akhlak", "class": "Kelas 11-MIPA" },
+        { "time": "11:20-12:00", "subject": "Bahasa Arab", "class": "Kelas 12-IPS" },
+        { "time": "13:00-14:20", "subject": "Ushul Fiqih", "class": "Kelas 11-IPS" }
+      ]
+    },
+    {
+      "teacherId": "T18",
+      "teacherName": "Hanif Khoeriyah, S.Pd.I",
+      "teacherImage": "images/guru/usthhanif.webp",
+      "schedule": [
+        { "time": "07:00-09:00", "subject": "Bahasa Arab", "class": "Kelas 8-A" },
+        { "time": "09:00-09:40", "subject": "Bahasa Arab", "class": "Kelas 8-B" },
+        { "time": "10:00-10:40", "subject": "Bahasa Arab", "class": "Kelas 8-B" }
+      ]
+    },
+    {
+      "teacherId": "T09",
+      "teacherName": "Hijrauly Albebian, S.I.P.",
+      "teacherImage": "images/guru/ustdeveloper.webp",
+      "schedule": [
+        { "time": "08:20-09:40", "subject": "Informatika", "class": "Kelas 9-A" },
+        { "time": "13:00-14:20", "subject": "Informatika", "class": "Kelas 8-A" }
+      ]
+    },
+    {
+      "teacherId": "T04",
+      "teacherName": "Ilham Ghoffar Solekhan, S.H., M.H.",
+      "teacherImage": "images/guru/ustilham.webp",
+      "schedule": [
+        { "time": "10:40-12:00", "subject": "Ushul Fiqih", "class": "Kelas 10-1" },
+        { "time": "13:00-14:20", "subject": "Tafsir", "class": "Kelas 11-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T17",
+      "teacherName": "Istiyono, S.Pd.",
+      "teacherImage": "images/guru/ustistiyono.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 7-A" },
+        { "time": "10:40-12:00", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 7-B" },
+        { "time": "13:00-14:20", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 9-B" }
+      ]
+    },
+    {
+      "teacherId": "T11",
+      "teacherName": "Laela Nurhidayati, Lc.",
+      "teacherImage": "images/guru/usthlaela.webp",
+      "schedule": [
+        { "time": "08:20-09:00", "subject": "Bahasa Arab", "class": "Kelas 10-1" }
+      ]
+    },
+    {
+      "teacherId": "T31",
+      "teacherName": "M. Bagus Wildani",
+      "teacherImage": "images/guru/ustwildani.webp",
+      "schedule": [
+        { "time": "08:20-09:40", "subject": "Hadits", "class": "Kelas 12-IPS" },
+        { "time": "13:00-14:20", "subject": "Aqidah Akhlak", "class": "Kelas 8-B" }
+      ]
+    },
+    {
+      "teacherId": "T41",
+      "teacherName": "Meidiala Meisha Meiulawati, S.Pd.",
+      "teacherImage": "images/guru/usthmeimeimei.webp",
+      "schedule": [
+        { "time": "07:00-09:00", "subject": "Bahasa Indonesia", "class": "Kelas 7-B" },
+        { "time": "10:00-12:00", "subject": "Bahasa Indonesia", "class": "Kelas 7-C" },
+        { "time": "13:40-14:20", "subject": "Bahasa Indonesia", "class": "Kelas 7-A" }
+      ]
+    },
+    {
+      "teacherId": "T42",
+      "teacherName": "Muhamad Roikhan Atthokilla, S.Pd.",
+      "teacherImage": "images/guru/ustatok.webp",
+      "schedule": [
+        { "time": "09:00-09:40", "subject": "Fikih", "class": "Kelas 10-1" },
+        { "time": "10:00-10:40", "subject": "Fikih", "class": "Kelas 10-1" },
+        { "time": "13:00-14:20", "subject": "Fikih", "class": "Kelas 12-IPS" }
+      ]
+    },
+    {
+      "teacherId": "T39",
+      "teacherName": "Mukhammad Muqorrobin, S.Pd.",
+      "teacherImage": "images/guru/ustrobin.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Seni Budaya (SBK)", "class": "Kelas 9-A" },
+        { "time": "11:20-12:00", "subject": "Seni Budaya (SBK)", "class": "Kelas 9-B" },
+        { "time": "13:00-14:20", "subject": "Prakarya dan Kewirausahaan", "class": "Kelas 10-2" }
+      ]
+    },
+    {
+      "teacherId": "T08",
+      "teacherName": "Nining Purwaningrum, S.Pd.",
+      "teacherImage": "images/guru/usthnining.webp",
+      "schedule": [
+        { "time": "07:00-09:00", "subject": "Bahasa Indonesia", "class": "Kelas 8-B" },
+        { "time": "09:00-09:40", "subject": "Seni Budaya (SBK)", "class": "Kelas 8-A" },
+        { "time": "10:00-10:40", "subject": "Seni Budaya (SBK)", "class": "Kelas 8-A" },
+        { "time": "10:10-11:20", "subject": "Bahasa Indonesia", "class": "Kelas 8-A" }
+      ]
+    },
+    {
+      "teacherId": "T24",
+      "teacherName": "Nur Faizah, S.Pd.",
+      "teacherImage": "images/guru/usthfaizah.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "IPA (Fisika)", "class": "Kelas 10-2" },
+        { "time": "10:00-12:00", "subject": "Fisika", "class": "Kelas 12-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T28",
+      "teacherName": "Puji Wuryani, S.H., S.Pd.",
+      "teacherImage": "images/guru/usthpuji.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Bahasa Jawa", "class": "Kelas 11-IPS" }
+      ]
+    },
+    {
+      "teacherId": "T20",
+      "teacherName": "Ramini, S.Pd.",
+      "teacherImage": "images/guru/usthramini.webp",
+      "schedule": [
+        { "time": "10:40-12:00", "subject": "Qur'an Hadits", "class": "Kelas 9-A" },
+        { "time": "13:00-14:20", "subject": "Qur'an Hadits", "class": "Kelas 7-B" }
+      ]
+    },
+    {
+      "teacherId": "T05",
+      "teacherName": "Sa'adah",
+      "teacherImage": "images/guru/usthsaadah.webp",
+      "schedule": [
+        { "time": "09:00-09:40", "subject": "Tamrin Lughoh", "class": "Kelas 7-B" },
+        { "time": "10:00-10:40", "subject": "Tamrin Lughoh", "class": "Kelas 7-B" },
+        { "time": "10:40-12:00", "subject": "Tamrin Lughoh", "class": "Kelas 8-B" },
+        { "time": "13:00-14:20", "subject": "Tamrin Lughoh", "class": "Kelas 7-C" }
+      ]
+    },
+    {
+      "teacherId": "T22",
+      "teacherName": "Sefi Handayani, S.Pd.",
+      "teacherImage": "images/guru/usthsefi.webp",
+      "schedule": [
+        { "time": "08:20-09:40", "subject": "Kimia", "class": "Kelas 12-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T35",
+      "teacherName": "Sofiatul Baroroh, S.Pd.",
+      "teacherImage": "images/guru/usthsofi.webp",
+      "schedule": [
+        { "time": "08:20-09:40", "subject": "Ekonomi Akuntansi", "class": "Kelas 11-IPS" },
+        { "time": "13:00-14:20", "subject": "Ekonomi Akuntansi", "class": "Kelas 10-1" }
+      ]
+    },
+    {
+      "teacherId": "T19",
+      "teacherName": "Sri Hartati, S.E.",
+      "teacherImage": "images/guru/usthsrihartati.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Ilmu Pengetahuan Sosial (IPS)", "class": "Kelas 7-C" },
+        { "time": "08:20-09:40", "subject": "Ilmu Pengetahuan Sosial (IPS)", "class": "Kelas 9-B" },
+        { "time": "10:00-11:20", "subject": "Ilmu Pengetahuan Sosial (IPS)", "class": "Kelas 7-A" }
+      ]
+    },
+    {
+      "teacherId": "T21",
+      "teacherName": "Yuniah, S.Pt.",
+      "teacherImage": "images/guru/usthyuniah.webp",
+      "schedule": [
+        { "time": "08:20-09:40", "subject": "Pendidikan Kewarganegaraan (PKn)", "class": "Kelas 7-C" },
+        { "time": "11:20-12:00", "subject": "Pendidikan Kewarganegaraan (PKn)", "class": "Kelas 7-A" },
+        { "time": "13:00-13:40", "subject": "Pendidikan Kewarganegaraan (PKn)", "class": "Kelas 7-A" }
+      ]
+    },
+    {
+      "teacherId": "T10",
+      "teacherName": "Zaenal Mustaqim, S.Pd.",
+      "teacherImage": "images/guru/ustzaenal.webp",
+      "schedule": [
+        { "time": "10:00-12:00", "subject": "Sosiologi", "class": "Kelas 11-IPS" },
+        { "time": "13:00-14:20", "subject": "Ilmu Pengetahuan Sosial (IPS)", "class": "Kelas 9-A" }
+      ]
+    }
+  ],
+  "2": [
+    {
+      "teacherId": "T26",
+      "teacherName": "Ahmad Rifai, S.Kom.",
+      "teacherImage": "images/guru/ustrifai.webp",
+      "schedule": [
+        { "time": "09:00-09:40", "subject": "Informatika", "class": "Kelas 7-B" },
+        { "time": "10:00-10:40", "subject": "Informatika", "class": "Kelas 7-B" },
+        { "time": "13:00-14:20", "subject": "Informatika", "class": "Kelas 7-C" }
+      ]
+    },
+    {
+      "teacherId": "T13",
+      "teacherName": "Budiarti, S.Ag.",
+      "teacherImage": "images/guru/usthbudiarti.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Geografi", "class": "Kelas 12-IPS" }
+      ]
+    },
+    {
+      "teacherId": "T07",
+      "teacherName": "Dianisa Permanasari, S.Pd.",
+      "teacherImage": "images/guru/usthdianisa.webp",
+      "schedule": [
+        { "time": "09:00-09:40", "subject": "Matematika", "class": "Kelas 7-C" },
+        { "time": "10:00-10:40", "subject": "Matematika", "class": "Kelas 7-C" },
+        { "time": "13:00-14:20", "subject": "Matematika", "class": "Kelas 9-A" }
+      ]
+    },
+    {
+      "teacherId": "T16",
+      "teacherName": "Eni Erawati, S.Pd.",
+      "teacherImage": "images/guru/ustheni.webp",
+      "schedule": [
+        { "time": "07:00-07:40", "subject": "Matematika", "class": "Kelas 12-MIPA" },
+        { "time": "09:00-09:40", "subject": "Matematika", "class": "Kelas 11-IPS" },
+        { "time": "11:20-12:00", "subject": "Matematika", "class": "Kelas 12-IPS" }
+      ]
+    },
+    {
+      "teacherId": "T33",
+      "teacherName": "Fitrotul Khasanah, S.Pd.",
+      "teacherImage": "images/guru/usthfitroh.webp",
+      "schedule": [
+        { "time": "09:00-09:40", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 8-B" },
+        { "time": "10:00-10:40", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 8-B" },
+        { "time": "13:00-14:20", "subject": "Matematika", "class": "Kelas 7-A" }
+      ]
+    },
+    {
+      "teacherId": "T14",
+      "teacherName": "Fuad Zen, S.Pd.I",
+      "teacherImage": "images/guru/ustzen.webp",
+      "schedule": [
+        { "time": "07:40-09:00", "subject": "Nahwu", "class": "Kelas 10-1" },
+        { "time": "09:00-09:40", "subject": "Bahasa Arab", "class": "Kelas 11-MIPA" },
+        { "time": "10:00-10:40", "subject": "Bahasa Arab", "class": "Kelas 11-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T18",
+      "teacherName": "Hanif Khoeriyah, S.Pd.I",
+      "teacherImage": "images/guru/usthhanif.webp",
+      "schedule": [
+        { "time": "10:40-12:00", "subject": "Sejarah Kebudayaan Islam (SKI)", "class": "Kelas 8-B" }
+      ]
+    },
+    {
+      "teacherId": "T09",
+      "teacherName": "Hijrauly Albebian, S.I.P.",
+      "teacherImage": "images/guru/ustdeveloper.webp",
+      "schedule": [
+        { "time": "10:40-12:00", "subject": "Prakarya dan Kewirausahaan", "class": "Kelas 10-2" }
+      ]
+    },
+    {
+      "teacherId": "T04",
+      "teacherName": "Ilham Ghoffar Solekhan, S.H., M.H.",
+      "teacherImage": "images/guru/ustilham.webp",
+      "schedule": [
+        { "time": "08:20-09:00", "subject": "Qur'an Hadits", "class": "Kelas 11-IPS" },
+        { "time": "09:00-09:40", "subject": "Qur'an Hadits", "class": "Kelas 12-MIPA" },
+        { "time": "10:00-10:40", "subject": "Qur'an Hadits", "class": "Kelas 12-MIPA" },
+        { "time": "10:40-12:00", "subject": "Tafsir", "class": "Kelas 10-1" },
+        { "time": "13:00-14:20", "subject": "Qur'an Hadits", "class": "Kelas 10-2" }
+      ]
+    },
+    {
+      "teacherId": "T32",
+      "teacherName": "Istakim",
+      "teacherImage": "images/guru/ustistakim.webp",
+      "schedule": [
+        { "time": "10:40-12:00", "subject": "Hadits", "class": "Kelas 11-MIPA" },
+        { "time": "13:00-14:20", "subject": "Tafsir", "class": "Kelas 8-A" }
+      ]
+    },
+    {
+      "teacherId": "T17",
+      "teacherName": "Istiyono, S.Pd.",
+      "teacherImage": "images/guru/ustistiyono.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 9-A" },
+        { "time": "10:40-12:00", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 7-C" }
+      ]
+    },
+    {
+      "teacherId": "T11",
+      "teacherName": "Laela Nurhidayati, Lc.",
+      "teacherImage": "images/guru/usthlaela.webp",
+      "schedule": [
+        { "time": "07:40-09:00", "subject": "Bahasa Arab", "class": "Kelas 10-2" },
+        { "time": "09:00-09:40", "subject": "Bahasa Arab", "class": "Kelas 10-1" },
+        { "time": "10:00-10:40", "subject": "Bahasa Arab", "class": "Kelas 10-1" }
+      ]
+    },
+    {
+      "teacherId": "T31",
+      "teacherName": "M. Bagus Wildani",
+      "teacherImage": "images/guru/ustwildani.webp",
+      "schedule": [
+        { "time": "09:00-09:40", "subject": "Aqidah Akhlak", "class": "Kelas 8-A" },
+        { "time": "10:00-10:40", "subject": "Aqidah Akhlak", "class": "Kelas 8-A" }
+      ]
+    },
+    {
+      "teacherId": "T39",
+      "teacherName": "Mukhammad Muqorrobin, S.Pd.",
+      "teacherImage": "images/guru/ustrobin.webp",
+      "schedule": [
+        { "time": "13:00-14:20", "subject": "Prakarya dan Kewirausahaan", "class": "Kelas 12-IPS" }
+      ]
+    },
+    {
+      "teacherId": "T38",
+      "teacherName": "Muzdalifah, S.Pd.",
+      "teacherImage": "images/guru/usthmuzda.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Sejarah Kebudayaan Islam (SKI)", "class": "Kelas 11-IPS" }
+      ]
+    },
+    {
+      "teacherId": "T08",
+      "teacherName": "Nining Purwaningrum, S.Pd.",
+      "teacherImage": "images/guru/usthnining.webp",
+      "schedule": [
+        { "time": "07:00-09:00", "subject": "Seni Budaya (SBK)", "class": "Kelas 8-B" },
+        { "time": "08:20-09:40", "subject": "Bahasa Indonesia", "class": "Kelas 9-A" }
+      ]
+    },
+    {
+      "teacherId": "T15",
+      "teacherName": "Nofi Fatmawati, S.Pd.",
+      "teacherImage": "images/guru/usthnofi.webp",
+      "schedule": [
+        { "time": "09:00-09:40", "subject": "Bahasa Inggris", "class": "Kelas 7-A" },
+        { "time": "10:00-10:40", "subject": "Bahasa Inggris", "class": "Kelas 7-A" },
+        { "time": "10:40-12:00", "subject": "Bahasa Inggris", "class": "Kelas 8-A" }
+      ]
+    },
+    {
+      "teacherId": "T37",
+      "teacherName": "Nurhamid, S.Pd.I.",
+      "teacherImage": "images/guru/usthamid.webp",
+      "schedule": [
+        { "time": "07:40-09:00", "subject": "Fikih", "class": "Kelas 7-C" },
+        { "time": "10:40-12:00", "subject": "Fikih", "class": "Kelas 7-A" }
+      ]
+    },
+    {
+      "teacherId": "T24",
+      "teacherName": "Nur Faizah, S.Pd.",
+      "teacherImage": "images/guru/usthfaizah.webp",
+      "schedule": [
+        { "time": "07:40-09:00", "subject": "Fisika", "class": "Kelas 12-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T36",
+      "teacherName": "Robit Murtaqi, S.H.",
+      "teacherImage": "images/guru/ustrobit.webp",
+      "schedule": [
+        { "time": "10:40-12:00", "subject": "Mahfuzhot", "class": "Kelas 9-A" }
+      ]
+    },
+    {
+      "teacherId": "T05",
+      "teacherName": "Sa'adah",
+      "teacherImage": "images/guru/usthsaadah.webp",
+      "schedule": [
+        { "time": "10:40-12:00", "subject": "Mahfuzhot", "class": "Kelas 7-B" },
+        { "time": "13:00-14:20", "subject": "Nahwu", "class": "Kelas 11-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T06",
+      "teacherName": "Santi Wilaswari R, S.Pd.",
+      "teacherImage": "images/guru/usthsanti.webp",
+      "schedule": [
+        { "time": "07:00-09:00", "subject": "Biologi", "class": "Kelas 11-MIPA" },
+        { "time": "09:00-09:40", "subject": "IPA (Biologi)", "class": "Kelas 10-2" },
+        { "time": "10:00-10:40", "subject": "IPA (Biologi)", "class": "Kelas 10-2" },
+        { "time": "10:40-12:00", "subject": "Biologi", "class": "Kelas 12-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T19",
+      "teacherName": "Sri Hartati, S.E.",
+      "teacherImage": "images/guru/usthsrihartati.webp",
+      "schedule": [
+        { "time": "07:00-09:00", "subject": "Ilmu Pengetahuan Sosial (IPS)", "class": "Kelas 8-A" },
+        { "time": "13:00-14:20", "subject": "Ilmu Pengetahuan Sosial (IPS)", "class": "Kelas 7-B" }
+      ]
+    },
+    {
+      "teacherId": "T40",
+      "teacherName": "Tim Tahsin",
+      "teacherImage": "images/guru/timtahsin.webp",
+      "schedule": [
+        { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "class": "Kelas 7-A" },
+        { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "class": "Kelas 7-B" },
+        { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "class": "Kelas 7-C" },
+        { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "class": "Kelas 10-1" },
+        { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "class": "Kelas 10-2" }
+      ]
+    },
+    {
+      "teacherId": "T25",
+      "teacherName": "Vinza Satresna, S.Pd.",
+      "teacherImage": "images/guru/ustvinza.webp",
+      "schedule": [
+        { "time": "07:40-09:00", "subject": "Pendidikan Jasmani (Penjas)", "class": "Kelas 7-A" },
+        { "time": "10:00-11:20", "subject": "Pendidikan Jasmani (Penjas)", "class": "Kelas 9-B" }
+      ]
+    },
+    {
+      "teacherId": "T27",
+      "teacherName": "Woro Fatimah, S.Pd.",
+      "teacherImage": "images/guru/usthworo.webp",
+      "schedule": [
+        { "time": "08:20-09:40", "subject": "Bahasa Inggris Lanjut", "class": "Kelas 12-IPS" },
+        { "time": "10:00-11:20", "subject": "Bahasa Inggris Lanjut", "class": "Kelas 11-IPS" }
+      ]
+    },
+    {
+      "teacherId": "T21",
+      "teacherName": "Yuniah, S.Pt.",
+      "teacherImage": "images/guru/usthyuniah.webp",
+      "schedule": [
+        { "time": "07:40-09:00", "subject": "Pendidikan Kewarganegaraan (PKn)", "class": "Kelas 7-B" },
+        { "time": "10:00-10:40", "subject": "Pendidikan Kewarganegaraan (PKn)", "class": "Kelas 9-A" }
+      ]
+    }
+  ],
+  "3": [
+    {
+      "teacherId": "T30",
+      "teacherName": "Arfan Zafrullah, S.Pd.",
+      "teacherImage": "images/guru/ustarfan.webp",
+      "schedule": [
+        { "time": "09:00-09:40", "subject": "Bahasa Indonesia", "class": "Kelas 11-IPS" },
+        { "time": "10:00-11:20", "subject": "Bahasa Indonesia", "class": "Kelas 11-IPS" },
+        { "time": "10:40-12:00", "subject": "Bahasa Indonesia", "class": "Kelas 12-MIPA" },
+        { "time": "13:00-14:20", "subject": "Bahasa Indonesia", "class": "Kelas 10-2" }
+      ]
+    },
+    {
+      "teacherId": "T07",
+      "teacherName": "Dianisa Permanasari, S.Pd.",
+      "teacherImage": "images/guru/usthdianisa.webp",
+      "schedule": [
+        { "time": "07:00-09:00", "subject": "Matematika", "class": "Kelas 8-A" },
+        { "time": "08:20-09:40", "subject": "Matematika", "class": "Kelas 9-A" }
+      ]
+    },
+    {
+      "teacherId": "T33",
+      "teacherName": "Fitrotul Khasanah, S.Pd.",
+      "teacherImage": "images/guru/usthfitroh.webp",
+      "schedule": [
+        { "time": "08:20-09:00", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 8-B" },
+        { "time": "09:00-09:40", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 8-B" },
+        { "time": "10:00-11:20", "subject": "Matematika", "class": "Kelas 7-B" },
+        { "time": "13:00-14:20", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 8-A" }
+      ]
+    },
+    {
+      "teacherId": "T14",
+      "teacherName": "Fuad Zen, S.Pd.I",
+      "teacherImage": "images/guru/ustzen.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Aqidah Akhlak", "class": "Kelas 11-IPS" },
+        { "time": "09:00-09:40", "subject": "Aqidah Akhlak", "class": "Kelas 10-1" },
+        { "time": "10:00-10:40", "subject": "Aqidah Akhlak", "class": "Kelas 10-1" },
+        { "time": "11:20-12:00", "subject": "Aqidah Akhlak", "class": "Kelas 12-IPS" },
+        { "time": "13:00-13:40", "subject": "Aqidah Akhlak", "class": "Kelas 12-IPS" }
+      ]
+    },
+    {
+      "teacherId": "T18",
+      "teacherName": "Hanif Khoeriyah, S.Pd.I",
+      "teacherImage": "images/guru/usthhanif.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Sejarah Kebudayaan Islam (SKI)", "class": "Kelas 9-A" },
+        { "time": "13:00-14:20", "subject": "Sejarah Kebudayaan Islam (SKI)", "class": "Kelas 7-C" }
+      ]
+    },
+    {
+      "teacherId": "T32",
+      "teacherName": "Istakim",
+      "teacherImage": "images/guru/ustistakim.webp",
+      "schedule": [
+        { "time": "10:00-10:40", "subject": "Tafsir", "class": "Kelas 8-B" },
+        { "time": "13:00-14:20", "subject": "Hadits", "class": "Kelas 8-B" }
+      ]
+    },
+    {
+      "teacherId": "T17",
+      "teacherName": "Istiyono, S.Pd.",
+      "teacherImage": "images/guru/ustistiyono.webp",
+      "schedule": [
+        { "time": "07:40-09:00", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 7-B" }
+      ]
+    },
+    {
+      "teacherId": "T31",
+      "teacherName": "M. Bagus Wildani",
+      "teacherImage": "images/guru/ustwildani.webp",
+      "schedule": [
+        { "time": "13:00-14:20", "subject": "Bahasa Arab", "class": "Kelas 9-A" }
+      ]
+    },
+    {
+      "teacherId": "T41",
+      "teacherName": "Meidiala Meisha Meiulawati, S.Pd.",
+      "teacherImage": "images/guru/usthmeimeimei.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Bahasa Indonesia", "class": "Kelas 9-B" },
+        { "time": "08:45-09:20", "subject": "Bahasa Indonesia", "class": "Kelas 7-C" },
+        { "time": "09:35-10:10", "subject": "Bahasa Indonesia", "class": "Kelas 7-C" },
+        { "time": "11:20-12:00", "subject": "Bahasa Indonesia", "class": "Kelas 7-B" },
+        { "time": "13:00-13:40", "subject": "Bahasa Indonesia", "class": "Kelas 7-B" }
+      ]
+    },
+    {
+      "teacherId": "T42",
+      "teacherName": "Muhamad Roikhan Atthokilla, S.Pd.",
+      "teacherImage": "images/guru/ustatok.webp",
+      "schedule": [
+        { "time": "08:20-09:00", "subject": "Fikih", "class": "Kelas 11-MIPA" },
+        { "time": "09:00-09:40", "subject": "Ushul Fiqih", "class": "Kelas 11-MIPA" },
+        { "time": "13:00-14:20", "subject": "Fikih", "class": "Kelas 11-IPS" }
+      ]
+    },
+    {
+      "teacherId": "T38",
+      "teacherName": "Muzdalifah, S.Pd.",
+      "teacherImage": "images/guru/usthmuzda.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Sejarah Indonesia", "class": "Kelas 12-MIPA" },
+        { "time": "10:00-10:40", "subject": "Sejarah Indonesia", "class": "Kelas 11-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T08",
+      "teacherName": "Nining Purwaningrum, S.Pd.",
+      "teacherImage": "images/guru/usthnining.webp",
+      "schedule": [
+        { "time": "07:35-08:10", "subject": "Seni Budaya (SBK)", "class": "Kelas 7-C" },
+        { "time": "10:40-12:00", "subject": "Bahasa Indonesia", "class": "Kelas 8-B" },
+        { "time": "13:40-14:20", "subject": "Seni Budaya (SBK)", "class": "Kelas 7-B" }
+      ]
+    },
+    {
+      "teacherId": "T15",
+      "teacherName": "Nofi Fatmawati, S.Pd.",
+      "teacherImage": "images/guru/usthnofi.webp",
+      "schedule": [
+        { "time": "07:40-09:00", "subject": "Bahasa Inggris", "class": "Kelas 7-C" },
+        { "time": "10:40-12:00", "subject": "Bahasa Inggris", "class": "Kelas 9-A" }
+      ]
+    },
+    {
+      "teacherId": "T37",
+      "teacherName": "Nurhamid, S.Pd.I.",
+      "teacherImage": "images/guru/usthamid.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Fikih", "class": "Kelas 8-B" },
+        { "time": "09:00-09:40", "subject": "Fikih", "class": "Kelas 8-A" },
+        { "time": "10:00-10:40", "subject": "Fikih", "class": "Kelas 8-A" },
+        { "time": "10:40-12:00", "subject": "Bahasa Arab", "class": "Kelas 7-A" }
+      ]
+    },
+    {
+      "teacherId": "T24",
+      "teacherName": "Nur Faizah, S.Pd.",
+      "teacherImage": "images/guru/usthfaizah.webp",
+      "schedule": [
+        { "time": "10:40-12:00", "subject": "Fisika", "class": "Kelas 11-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T28",
+      "teacherName": "Puji Wuryani, S.H., S.Pd.",
+      "teacherImage": "images/guru/usthpuji.webp",
+      "schedule": [
+        { "time": "09:00-09:40", "subject": "Bahasa Jawa", "class": "Kelas 7-A" },
+        { "time": "10:00-10:40", "subject": "Bahasa Jawa", "class": "Kelas 7-A" }
+      ]
+    },
+    {
+      "teacherId": "T20",
+      "teacherName": "Ramini, S.Pd.",
+      "teacherImage": "images/guru/usthramini.webp",
+      "schedule": [
+        { "time": "08:10-08:45", "subject": "Tajwid", "class": "Kelas 7-C" },
+        { "time": "10:40-12:00", "subject": "Qur'an Hadits", "class": "Kelas 7-C" }
+      ]
+    },
+    {
+      "teacherId": "T36",
+      "teacherName": "Robit Murtaqi, S.H.",
+      "teacherImage": "images/guru/ustrobit.webp",
+      "schedule": [
+        { "time": "08:20-09:40", "subject": "Mahfuzhot", "class": "Kelas 9-B" },
+        { "time": "11:20-12:00", "subject": "Pendidikan Kewarganegaraan (PKn)", "class": "Kelas 11-IPS" },
+        { "time": "13:00-14:20", "subject": "Pendidikan Kewarganegaraan (PKn)", "class": "Kelas 11-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T05",
+      "teacherName": "Sa'adah",
+      "teacherImage": "images/guru/usthsaadah.webp",
+      "schedule": [
+        { "time": "09:00-09:40", "subject": "Imla'", "class": "Kelas 7-B" },
+        { "time": "10:40-12:00", "subject": "Tamrin Lughoh", "class": "Kelas 9-B" },
+        { "time": "13:00-14:20", "subject": "Mahfuzhot", "class": "Kelas 7-A" }
+      ]
+    },
+    {
+      "teacherId": "T06",
+      "teacherName": "Santi Wilaswari R, S.Pd.",
+      "teacherImage": "images/guru/usthsanti.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Biologi", "class": "Kelas 11-MIPA" },
+        { "time": "08:20-09:40", "subject": "Biologi", "class": "Kelas 12-MIPA" },
+        { "time": "10:00-10:40", "subject": "Biologi", "class": "Kelas 12-MIPA" },
+        { "time": "10:40-12:00", "subject": "IPA (Biologi)", "class": "Kelas 10-1" }
+      ]
+    },
+    {
+      "teacherId": "T19",
+      "teacherName": "Sri Hartati, S.E.",
+      "teacherImage": "images/guru/usthsrihartati.webp",
+      "schedule": [
+        { "time": "07:40-09:00", "subject": "Ilmu Pengetahuan Sosial (IPS)", "class": "Kelas 7-A" },
+        { "time": "09:00-09:40", "subject": "Ilmu Pengetahuan Sosial (IPS)", "class": "Kelas 7-C" },
+        { "time": "10:00-10:40", "subject": "Ilmu Pengetahuan Sosial (IPS)", "class": "Kelas 7-C" },
+        { "time": "10:40-12:00", "subject": "Ilmu Pengetahuan Sosial (IPS)", "class": "Kelas 8-A" }
+      ]
+    },
+    {
+      "teacherId": "T40",
+      "teacherName": "Tim Tahsin",
+      "teacherImage": "images/guru/timtahsin.webp",
+      "schedule": [
+        { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "class": "Kelas 7-A" },
+        { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "class": "Kelas 7-B" },
+        { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "class": "Kelas 7-C" },
+        { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "class": "Kelas 10-1" },
+        { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "class": "Kelas 10-2" }
+      ]
+    },
+    {
+      "teacherId": "T27",
+      "teacherName": "Woro Fatimah, S.Pd.",
+      "teacherImage": "images/guru/usthworo.webp",
+      "schedule": [
+        { "time": "08:20-09:00", "subject": "Bahasa Inggris Lanjut", "class": "Kelas 11-IPS" },
+        { "time": "13:00-14:20", "subject": "Bahasa Inggris", "class": "Kelas 12-MIPA" }
+      ]
+    },
+    {
+      "teacherId": "T21",
+      "teacherName": "Yuniah, S.Pt.",
+      "teacherImage": "images/guru/usthyuniah.webp",
+      "schedule": [
+        { "time": "07:00-08:20", "subject": "Pendidikan Kewarganegaraan (PKn)", "class": "Kelas 12-IPS" }
+      ]
+    },
+    {
+      "teacherId": "T10",
+      "teacherName": "Zaenal Mustaqim, S.Pd.",
+      "teacherImage": "images/guru/ustzaenal.webp",
+      "schedule": [
+        { "time": "10:00-11:20", "subject": "Sosiologi", "class": "Kelas 12-IPS" }
+      ]
+    }
+  ]
+}

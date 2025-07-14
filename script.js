@@ -4,6 +4,7 @@ let subjectData = {};
 let scheduleData = {};
 let piketData = {};
 let classSchedules = {};
+let teacherActiveSchedules = {};
 let currentBuilding = 'utara';
 let currentFloor = 1;
 let isZoomedOut = false; 
@@ -321,7 +322,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             fetch("data/subjects.json"),
             fetch("data/schedule.json"),
             fetch("data/piket.json"),
-            fetch("data/class-schedules.json")
+            fetch("data/class-schedules.json"),
+            fetch("data/teacher-active-schedule.json")
         ]);
 
         for (const response of responses) {
@@ -329,7 +331,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 throw new Error(`Gagal memuat file data: ${response.url}`);
             }
         }
-        [roomData, teacherData, subjectData, scheduleData, piketData, classSchedules] = await Promise.all(responses.map(res => res.json()));
+        [roomData, teacherData, subjectData, scheduleData, piketData, classSchedules, teacherActiveSchedules] = await Promise.all(responses.map(res => res.json()));
         applyLayouts();
         renderAllRoomData();
         updateView(currentBuilding, currentFloor);
@@ -430,7 +432,11 @@ document.querySelector('#room-modal .close-button').addEventListener('click', ()
 });
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        if (modal.style.display === 'block') {
+        const teacherOverlay = document.getElementById('teacher-schedule-overlay');
+        if (teacherOverlay.classList.contains('visible')) {
+            teacherOverlay.classList.remove('visible');
+            document.body.classList.remove('no-scroll');
+        } else if (modal.style.display === 'block') {
             modal.style.display = 'none';
         } else if (searchBox.value.trim() !== '') {
             resetSearchView();
@@ -457,12 +463,36 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+document.getElementById('btn-show-all-teachers-schedule').addEventListener('click', () => {
+    displayAllTeachersSchedule();
+});
+
+const teacherOverlay = document.getElementById('teacher-schedule-overlay');
+teacherOverlay.querySelector('.close-button').addEventListener('click', () => {
+    teacherOverlay.classList.remove('visible');
+    document.body.classList.remove('no-scroll');
+});
+
+teacherOverlay.addEventListener('click', (e) => {
+    if (e.target === teacherOverlay) {
+        teacherOverlay.classList.remove('visible');
+        document.body.classList.remove('no-scroll');
+    }
+});
+
+// Panggil fungsi inisialisasi accordion sekali saja
+initializeAccordions();
+
 function openRoomModal(roomId, roomInfo) {
     resetModalContent();
 
     // Set judul dan deskripsi dasar
     document.getElementById('modal-title').textContent = roomInfo.name;
     document.getElementById('modal-desc').textContent = roomInfo.desc || '';
+
+    const btnShowAllTeachers = document.getElementById('btn-show-all-teachers-schedule');
+    const isTeacherOffice = roomInfo.name.toLowerCase().includes('kantor guru');
+    btnShowAllTeachers.style.display = isTeacherOffice ? 'inline-block' : 'none';
     
     // Isi konten modal berdasarkan tipe ruangan
     populateKeyPersonnel(roomInfo);
@@ -480,6 +510,7 @@ function resetModalContent() {
     document.getElementById('modal-personnel-info').style.display = 'none';
     document.getElementById('modal-schedule-display-container').style.display = 'none';
     document.getElementById('btn-show-schedule').style.display = 'none';
+    document.getElementById('btn-show-all-teachers-schedule').style.display = 'none';
     
     // Kosongkan konten yang digenerate
     document.getElementById('modal-personnel-info').innerHTML = '';
@@ -624,4 +655,82 @@ function displayClassSchedule(roomName) {
     }
     
     scheduleContainer.style.display = 'block';
+}
+
+function displayAllTeachersSchedule() {
+    const accordionContainer = document.getElementById('teacher-accordion-container');
+    const overlay = document.getElementById('teacher-schedule-overlay');
+    accordionContainer.innerHTML = ''; // Kosongkan konten sebelumnya
+
+    const now = new Date();
+    const dayOfWeek = now.getDay(); // 0 = Minggu, 1 = Senin, ...
+    const scheduleForToday = teacherActiveSchedules[dayOfWeek];
+
+    if (!scheduleForToday || scheduleForToday.length === 0) {
+        accordionContainer.innerHTML = `<p style="text-align: center; margin-top: 50px; color: #666;">Tidak ada guru yang terjadwal mengajar hari ini.</p>`;
+    } else {
+        scheduleForToday.forEach(teacher => {
+            const scheduleRows = teacher.schedule.map(s => `
+                <tr>
+                    <td>${s.time}</td>
+                    <td>${s.subject}</td>
+                    <td>${s.class}</td>
+                </tr>
+            `).join('');
+
+            const accordionItemHTML = `
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <img src="${teacher.teacherImage || 'images/guru/default.png'}" alt="Foto ${teacher.teacherName}">
+                        <span class="teacher-name">${teacher.teacherName}</span>
+                        <span class="session-count">${teacher.schedule.length} Sesi</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-panel">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Jam</th>
+                                    <th>Mata Pelajaran</th>
+                                    <th>Kelas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${scheduleRows}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+            accordionContainer.innerHTML += accordionItemHTML;
+        });
+    }
+    
+    // Tampilkan overlay
+    overlay.classList.add('visible');
+    document.body.classList.add('no-scroll');
+}
+function initializeAccordions() {
+    const accordionContainer = document.getElementById('teacher-accordion-container');
+    
+    accordionContainer.addEventListener('click', function(e) {
+        const header = e.target.closest('.accordion-header');
+        if (!header) return;
+
+        const item = header.parentElement;
+        const panel = header.nextElementSibling;
+        const icon = header.querySelector('.accordion-icon');
+
+        header.classList.toggle('active');
+
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            panel.style.padding = "0 20px";
+            icon.textContent = '+';
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            panel.style.padding = "15px 20px";
+            icon.textContent = '×';
+        }
+    });
 }

@@ -165,6 +165,10 @@
                 <div id="modal-contact-container" style="display: inline-block; margin-bottom: 10px;">
                     <!-- Tombol WhatsApp akan dimasukkan di sini -->
                 </div>
+
+                <button id="btn-show-all-teachers-schedule" class="action-button" style="display: none; background-color: #17a2b8;">
+                    Jadwal Guru Hari Ini
+                </button>
                 
                 <!-- ▼▼▼ PERUBAHAN 1: TOMBOL BARU UNTUK JADWAL GURU ▼▼▼ -->
                 <button id="btn-show-all-teachers-schedule" class="action-button" style="display: none; background-color: #17a2b8;">
@@ -197,6 +201,15 @@
             <a id="modal-link-button" class="action-button" href="#" target="_blank" style="display: none; margin-top: 25px;">
                 Kunjungi Website
             </a>
+        </div>
+    </div>
+    <div id="teacher-schedule-overlay" class="overlay-container">
+        <div class="overlay-content">
+            <span class="close-button">×</span>
+            <h3 style="margin-top: 0; text-align: center;">Jadwal Mengajar Guru Hari Ini</h3>
+            <div id="teacher-accordion-container">
+                <!-- Konten accordion akan digenerate oleh JavaScript -->
+            </div>
         </div>
     </div>
     <!-- ▲▲▲ AKHIR PERUBAHAN 2 ▲▲▲ -->
