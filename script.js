@@ -350,15 +350,11 @@ document.querySelectorAll('.room, .area-luar[data-id]').forEach(roomElement => {
     roomElement.addEventListener('click', () => {
         const roomId = roomElement.dataset.id || roomElement.id;
         const roomInfo = roomData[roomId];
-        
-        // Jangan buka modal jika ruangan tidak punya nama atau data
         if (!roomInfo?.name || roomInfo.name === "-") return;
         
         openRoomModal(roomId, roomInfo);
     });
 });
-
-
 document.getElementById('btn-show-schedule').addEventListener('click', () => {
     const roomName = document.getElementById('modal-title').textContent;
     const scheduleContainer = document.getElementById('modal-schedule-display-container');
@@ -517,10 +513,6 @@ function resetModalContent() {
     document.getElementById('modal-contact-container').innerHTML = '';
 }
 
-/**
- * Menampilkan informasi personel kunci (misal: Kepala Lab) di modal.
- * @param {object} roomInfo - Objek data ruangan.
- */
 function populateKeyPersonnel(roomInfo) {
     if (roomInfo.keyPersonnel?.length > 0) {
         const container = document.getElementById('modal-personnel-info');
@@ -540,7 +532,6 @@ function populateKeyPersonnel(roomInfo) {
         container.style.display = 'block';
     }
 }
-
 /**
  * Menampilkan tombol kontak (misal: WhatsApp) di modal.
  * @param {object} roomInfo - Objek data ruangan.
@@ -557,7 +548,6 @@ function populateContactInfo(roomInfo) {
         container.appendChild(contactButton);
     }
 }
-
 /**
  * Menampilkan informasi spesifik untuk kelas (wali kelas, kapasitas, tombol jadwal).
  * @param {object} roomInfo - Objek data ruangan.
@@ -565,7 +555,7 @@ function populateContactInfo(roomInfo) {
 function populateClassSpecificInfo(roomInfo) {
     if (roomInfo.type !== 'room-type-kelas') return;
 
-    // Tampilkan info Wali Kelas
+    // info Wali Kelas
     if (roomInfo.waliKelasId && teacherData[roomInfo.waliKelasId]) {
         const walasData = teacherData[roomInfo.waliKelasId];
         document.getElementById('walas-img').src = walasData.image || 'images/guru/default.png';
@@ -581,7 +571,7 @@ function populateClassSpecificInfo(roomInfo) {
     }
 }
 /**
- * Menampilkan informasi real-time (pelajaran berlangsung atau guru piket).
+ * informasi real-time (pelajaran berlangsung atau guru piket).
  * @param {string} roomId - ID ruangan.
  * @param {object} roomInfo - Objek data ruangan.
  */
@@ -663,7 +653,7 @@ function displayAllTeachersSchedule() {
     accordionContainer.innerHTML = ''; // Kosongkan konten sebelumnya
 
     const now = new Date();
-    const dayOfWeek = now.getDay(); // 0 = Minggu, 1 = Senin, ...
+    const dayOfWeek = now.getDay();
     const scheduleForToday = teacherActiveSchedules[dayOfWeek];
 
     if (!scheduleForToday || scheduleForToday.length === 0) {
@@ -705,8 +695,7 @@ function displayAllTeachersSchedule() {
             accordionContainer.innerHTML += accordionItemHTML;
         });
     }
-    
-    // Tampilkan overlay
+    // Overlay
     overlay.classList.add('visible');
     document.body.classList.add('no-scroll');
 }
