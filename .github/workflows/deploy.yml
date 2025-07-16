@@ -1,0 +1,39 @@
+# Nama workflow
+name: Deploy to GitHub Pages
+
+# Pemicu: Berjalan setiap kali ada push ke branch 'main'
+on:
+  push:
+    branches:
+      - main  # Ganti 'main' jika nama branch utama Anda 'master' atau lainnya
+
+# Izin yang dibutuhkan agar Actions bisa men-deploy
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Langkah-langkah pekerjaan
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Mengambil kode dari repositori
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Menyiapkan GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # 3. Mengunggah artefak/hasil build
+      # Untuk situs statis sederhana, folder root ('.') sudah cukup
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # Ganti '.' dengan 'dist' atau 'build' jika proyek Anda punya folder output
+
+      # 4. Men-deploy ke GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
