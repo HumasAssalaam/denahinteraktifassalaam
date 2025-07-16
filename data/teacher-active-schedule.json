@@ -506,8 +506,7 @@
       "teacherName": "Fitrotul Khasanah, S.Pd.",
       "teacherImage": "images/guru/usthfitroh.webp",
       "schedule": [
-        { "time": "08:20-09:00", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 8-B" },
-        { "time": "09:00-09:40", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 8-B" },
+        { "time": "08:20-09:40", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 8-B" },
         { "time": "10:00-11:20", "subject": "Matematika", "class": "Kelas 7-B" },
         { "time": "13:00-14:20", "subject": "Ilmu Pengetahuan Alam (IPA)", "class": "Kelas 8-A" }
       ]
