@@ -41,7 +41,9 @@
     "utara-lt1-kiri-r3": { "name": "Ruang BK MA", "type": "room-type-kantor", "desc": "Tempat Layanan Bimbingan Konseling.", "keyPersonnel": [{"title": "Guru BK","teacherId": "T46" }] },
     "utara-lt1-kiri-r4": { "name": "Ruang Kamad MA", "type": "room-type-kantor", "desc": "Ruang Kerja Kepala Madrasah Aliyah.", "keyPersonnel": [{"title": "Kepala Madrasah Aliyah","teacherId": "T30" }]
         },
-    "utara-lt1-kiri-r5": { "name": "Ruang TU", "type": "room-type-kantor", "desc": "Ruang Tata Usaha Pondok.", "keyPersonnel": [{"title": "Kepala Tata Usaha Pondok","teacherId": "T03" }]},
+    "utara-lt1-kiri-r5": { "name": "Ruang TU", "type": "room-type-kantor", "desc": "Ruang Tata Usaha dan Administrasi Pondok.", "keyPersonnel": [{"title": "Kepala Tata Usaha Pondok", "teacherId": "T03" }], "contactInfo": {
+      "label": "Hubungi Bagian Administrasi",
+      "whatsappNumber": "+6282136487806"}},
     "utara-lt1-kiri-r6": { "name": "Ruang Yayasan", "type": "room-type-kantor", "desc": "Ruang Manajemen Yayasan Pendidikan Islam Assalaam", 
         "keyPersonnel": [
                 {

@@ -573,3 +573,22 @@
     background-color: #f8f9fa;
     padding: 0 20px;
 }
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;      /* Kunci utama: sembunyikan teks yang berlebih */
+    white-space: nowrap;  /* Pastikan teks tidak turun ke baris baru */
+}
+
+/* Teks yang akan berjalan di dalam kontainer */
+.marquee-text {
+    display: inline-block; /* Membuat elemen bisa dianimasikan dengan transform */
+    padding-left: 100%;    /* Trik untuk memulai teks dari luar layar sebelah kanan */
+    animation: marquee-animation 7s linear infinite; /* Terapkan animasi */
+}
+
+/* Definisi animasi marquee */
+@keyframes marquee-animation {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-100%); } /* Geser elemen ke kiri sejauh lebarnya sendiri + paddingnya */
+}

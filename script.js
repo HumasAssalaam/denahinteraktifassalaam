@@ -577,28 +577,79 @@ function populateClassSpecificInfo(roomInfo) {
  */
 function populateLiveInfo(roomId, roomInfo) {
     const liveInfoContainer = document.getElementById('modal-live-info');
+    const contentContainer = document.getElementById('live-info-content-container');
     const modalDesc = document.getElementById('modal-desc');
 
-    // Prioritaskan Guru Piket
-    const dutyTeachers = getDutyTeacher(roomId);
-    if (dutyTeachers) {
-        document.getElementById('live-info-label').textContent = "Guru Piket";
-        document.getElementById('live-teacher-img').src = dutyTeachers[0].image || 'images/guru/default.png';
-        document.getElementById('live-teacher-name').textContent = dutyTeachers.length > 1 ? `${dutyTeachers[0].name} & tim` : dutyTeachers[0].name;
-        document.getElementById('live-info-status').textContent = "Bertugas Hari Ini";
-        liveInfoContainer.style.display = 'block';
-        return;
+    contentContainer.innerHTML = ''; // Selalu kosongkan kontainer di awal
+
+    const now = new Date();
+    const dayOfWeek = now.getDay();
+    const piketForToday = piketData[dayOfWeek];
+    const isTeacherOffice = roomInfo.name.toLowerCase().includes('kantor guru');
+
+    // --- LOGIKA BARU UNTUK GURU PIKET DI KANTOR GURU ---
+    if (isTeacherOffice && piketForToday) {
+        const dutyTeachers = [];
+
+        // 1. Ambil data guru piket MTs
+        const mtsTeacherIds = piketForToday["Kantor Guru MTs"] || [];
+        mtsTeacherIds.forEach(id => {
+            if (teacherData[id]) {
+                dutyTeachers.push({ ...teacherData[id], duty: "Piket MTs" });
+            }
+        });
+        
+        // 2. Ambil data guru piket MA
+        const maTeacherIds = piketForToday["Kantor Guru MA"] || [];
+        maTeacherIds.forEach(id => {
+            if (teacherData[id]) {
+                dutyTeachers.push({ ...teacherData[id], duty: "Piket MA" });
+            }
+        });
+
+        // 3. Jika ada guru piket, tampilkan semuanya
+        if (dutyTeachers.length > 0) {
+            document.getElementById('live-info-label').textContent = "Guru Piket Hari Ini";
+            
+            let generatedHTML = '';
+            dutyTeachers.forEach(teacher => {
+                // Membuat HTML yang meniru struktur .personnel-item atau .live-info-details Anda
+                generatedHTML += `
+                    <div class="live-info-details" style="display: flex; align-items: center; margin-bottom: 10px;"> 
+                        <img src="${teacher.image || 'images/guru/default.png'}" alt="Foto ${teacher.name}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 15px;">
+                        <div>
+                            <p style="margin: 0; font-weight: bold; font-size: 1.1em;">${teacher.name}</p>
+                            <p style="margin: 2px 0 0 0; font-size: 0.9em; color: #666;">${teacher.duty}</p>
+                        </div>
+                    </div>`;
+            });
+            contentContainer.innerHTML = generatedHTML;
+            liveInfoContainer.style.display = 'block';
+            return; // Hentikan fungsi setelah menampilkan guru piket
+        }
     }
 
+    // --- LOGIKA LAMA (FALLBACK) UNTUK RUANG KELAS & LAB ---
     if (roomInfo.type === 'room-type-kelas' || roomInfo.type === 'room-type-lab') {
         const lessonResult = getCurrentLesson(roomId);
         if (lessonResult) {
+            let lessonHTML = '';
             switch (lessonResult.status) {
                 case "ONGOING_LESSON":
-                    document.getElementById('live-info-label').textContent = "Pelajaran Berlangsung";
-                    document.getElementById('live-teacher-img').src = lessonResult.teacher.image || 'images/guru/default.png';
-                    document.getElementById('live-teacher-name').textContent = lessonResult.teacher.name;
-                    document.getElementById('live-info-status').textContent = lessonResult.subject.displayName;
+                    const liveInfoLabel = document.getElementById('live-info-label');liveInfoLabel.innerHTML = `
+                        <div class="marquee-container">
+                            <span class="marquee-text">Pelajaran Berlangsung</span>
+                        </div>
+                    `;
+                    lessonHTML = `
+                        <div class="live-info-details" style="display: flex; align-items: center;"> 
+                            <img src="${lessonResult.teacher.image || 'images/guru/default.png'}" alt="Foto ${lessonResult.teacher.name}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 15px;">
+                            <div>
+                                <p style="margin: 0; font-weight: bold; font-size: 1.1em;">${lessonResult.teacher.name}</p>
+                                <p style="margin: 2px 0 0 0; font-size: 0.9em; color: #666; font-weight: bold;">${lessonResult.subject.displayName}</p>
+                            </div>
+                        </div>`;
+                    contentContainer.innerHTML = lessonHTML;
                     liveInfoContainer.style.display = 'block';
                     break;
                 case "BREAK_TIME":

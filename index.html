@@ -128,17 +128,16 @@
             <h2 id="modal-title" style="margin-bottom: 20px;">Nama Ruangan</h2>
     
             <!-- INFO REAL-TIME -->
-            <div id="modal-live-info" style="display: none; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
-                <p id="live-info-label" style="margin: 0 0 10px 0; font-weight: bold; color: #007bff;"></p>
-                <div class="live-info-details"> 
-                    <img id="live-teacher-img" src="" alt="Foto Guru" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
-                    <div>
-                        <p id="live-teacher-name" style="margin: 0; font-weight: bold; font-size: 1.1em;"></p>
-                        <p id="live-info-status" style="margin: 2px 0 0 0; font-size: 0.9em; color: #666;"></p>
-                    </div>
-                </div>
-            </div>
-            
+<!-- INFO REAL-TIME -->
+<div id="modal-live-info" style="display: none; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
+    <!-- Judul ini tetap kita gunakan -->
+    <p id="live-info-label" style="margin: 0 0 10px 0; font-weight: bold; color: #007bff;"></p>
+    
+    <!-- Bagian 'live-info-details' diganti dengan kontainer dinamis ini -->
+    <div id="live-info-content-container">
+        <!-- Konten (guru piket atau pelajaran) akan diisi oleh JavaScript di sini -->
+    </div>
+</div>            
             <!-- INFO RUANGAN STATIS -->
             <div id="modal-static-info">
                 <!-- Info Wali Kelas -->
