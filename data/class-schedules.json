@@ -104,12 +104,10 @@
     ],
     "5": [
       { "time": "07:00-07:35", "subject": "Tahsin Santri Baru", "teacher": "Tim Tahsin" },
-      { "time": "07:35-08:10", "subject": "Aqidah Akhlak", "teacher": "M. Bagus Wildani" },
-      { "time": "08:10-08:45", "subject": "Aqidah Akhlak", "teacher": "M. Bagus Wildani" },
-      { "time": "08:45-09:20", "subject": "Aqidah Akhlak", "teacher": "M. Bagus Wildani" },
+      { "time": "07:35-08:45", "subject": "Aqidah Akhlak", "teacher": "M. Bagus Wildani" },
+      { "time": "08:45-09:20", "subject": "Bahasa Arab", "teacher": "Nurhamid, S.Pd.I." },
       { "time": "09:20-09:35", "subject": "Istirahat", "teacher": null },
-      { "time": "09:35-10:10", "subject": "Bahasa Jawa", "teacher": "Puji Wuryani, S.H., S.Pd." },
-      { "time": "10:10-10:45", "subject": "Bahasa Jawa", "teacher": "Puji Wuryani, S.H., S.Pd." },
+      { "time": "09:35-10:45", "subject": "Bahasa Jawa", "teacher": "Puji Wuryani, S.H., S.Pd." },
       { "time": "10:45-11:20", "subject": "Tajwid", "teacher": "Ramini, S.Pd." }
     ],
     "6": [
@@ -338,8 +336,9 @@
       { "time": "10:10-11:20", "subject": "Tafsir", "teacher": "Istakim" }
     ],
     "6": [
-      { "time": "07:00-08:20", "subject": "Matematika", "teacher": "Dianisa Permanasari, S.Pd." },
-      { "time": "08:20-09:40", "subject": "Ilmu Pengetahuan Sosial (IPS)", "teacher": "Zaenal Mustaqim, S.Pd." },
+      { "time": "07:00-07:40", "subject": "Matematika", "teacher": "Dianisa Permanasari, S.Pd." },
+      { "time": "07:40-09:00", "subject": "Ilmu Pengetahuan Sosial (IPS)", "teacher": "Zaenal Mustaqim, S.Pd." },
+      { "time": "09:00-09:40", "subject": "Ilmu Pengetahuan Alam (IPA)", "teacher": "Istiyono, S.Pd." },
       { "time": "09:40-10:00", "subject": "Istirahat", "teacher": null },
       { "time": "10:00-10:40", "subject": "Ilmu Pengetahuan Alam (IPA)", "teacher": "Istiyono, S.Pd." },
       { "time": "10:40-12:00", "subject": "Bahasa Jawa", "teacher": "Puji Wuryani, S.H., S.Pd." },
@@ -385,10 +384,12 @@
       { "time": "13:00-14:20", "subject": "Aqidah Akhlak", "teacher": "Hanif Khoeriyah, S.Pd.I" }
     ],
     "5": [
-      { "time": "07:00-08:10", "subject": "Ilmu Pengetahuan Alam (IPA)", "teacher": "Istiyono, S.Pd." },
-      { "time": "08:10-09:20", "subject": "Informatika", "teacher": "Hijrauly Albebian, S.I.P." },
+      { "time": "07:00-07:35", "subject": "Ilmu Pengetahuan Alam (IPA)", "teacher": "Istiyono, S.Pd." },
+      { "time": "07:35-08:45", "subject": "Informatika", "teacher": "Hijrauly Albebian, S.I.P." },
+      { "time": "08:45-09:20", "subject": "Hadits", "teacher": "Istakim" },
       { "time": "09:20-09:35", "subject": "Istirahat", "teacher": null },
-      { "time": "09:35-11:20", "subject": "Hadits", "teacher": "Istakim" }
+      { "time": "09:35-10:10", "subject": "Hadits", "teacher": "Istakim" },
+      { "time": "10:10-11:20", "subject": "Fikih", "teacher": "Nurhamid, S.Pd.I." }
     ],
     "6": [
       { "time": "07:00-08:20", "subject": "Ilmu Pengetahuan Alam (IPA)", "teacher": "Istiyono, S.Pd." },
@@ -446,9 +447,8 @@
     ],
     "5": [
       { "time": "07:00-07:35", "subject": "Tahsin Santri Baru", "teacher": "Tim Tahsin" },
-      { "time": "07:35-08:10", "subject": "Matematika", "teacher": "Eni Erawati, S.Pd." },
-      { "time": "08:10-08:45", "subject": "Matematika", "teacher": "Eni Erawati, S.Pd." },
-      { "time": "08:45-09:20", "subject": "Matematika", "teacher": "Eni Erawati, S.Pd." },
+      { "time": "07:35-08:45", "subject": "Matematika", "teacher": "Eni Erawati, S.Pd." },
+      { "time": "08:45-09:20", "subject": "Bahasa Inggris", "teacher": "Woro Fatimah, S.Pd." },
       { "time": "09:20-09:35", "subject": "Istirahat", "teacher": null },
       { "time": "09:35-10:10", "subject": "Bahasa Inggris", "teacher": "Woro Fatimah, S.Pd." },
       { "time": "10:10-11:20", "subject": "IPA (Kimia)", "teacher": "Sefi Handayani, S.Pd." }
@@ -561,10 +561,13 @@
       { "time": "13:00-14:20", "subject": "Ushul Fiqih", "teacher": "Fuad Zen, S.Pd.I" }
     ],
     "5": [
-      { "time": "07:00-08:10", "subject": "Shorof", "teacher": "Drs. Muflih Wahyanto" },
-      { "time": "08:10-09:20", "subject": "Fisika", "teacher": "Nur Faizah, S.Pd." },
+      { "time": "07:00-07:35", "subject": "Shorof", "teacher": "Drs. Muflih Wahyanto" },
+      { "time": "07:35-08:45", "subject": "Fisika", "teacher": "Nur Faizah, S.Pd." },
+      { "time": "08:45-09:20", "subject": "Kimia", "teacher": "Sefi Handayani, S.Pd." },
       { "time": "09:20-09:35", "subject": "Istirahat", "teacher": null },
-      { "time": "09:35-11:20", "subject": "Kimia", "teacher": "Sefi Handayani, S.Pd." }
+      { "time": "09:35-10:10", "subject": "Kimia", "teacher": "Sefi Handayani, S.Pd." },
+      { "time": "10:10-10:35", "subject": "Matematika Lanjutan", "teacher": "Eni Erawati, S.Pd." },
+      { "time": "10:35-11:20", "subject": "Bahasa Jawa", "teacher": "Puji Wuryani, S.H., S.Pd." }
     ],
     "6": [
       { "time": "07:00-09:00", "subject": "Matematika Lanjutan", "teacher": "Eni Erawati, S.Pd." },
@@ -617,18 +620,18 @@
       { "time": "13:00-14:20", "subject": "Sejarah", "teacher": "Muzdalifah, S.Pd." }
     ],
     "5": [
-      { "time": "07:00-08:10", "subject": "Geografi", "teacher": "Budiarti, S.Ag." },
-      { "time": "08:10-08:45", "subject": "Geografi", "teacher": "Budiarti, S.Ag." },
-      { "time": "08:45-09:20", "subject": "Geografi", "teacher": "Budiarti, S.Ag." },
+      { "time": "07:00-08:45", "subject": "Geografi", "teacher": "Budiarti, S.Ag." },
+      { "time": "08:45-09:20", "subject": "Tafsir", "teacher": "Ilham Ghoffar Solekhan, S.H., M.H." },
       { "time": "09:20-09:35", "subject": "Istirahat", "teacher": null },
       { "time": "09:35-10:10", "subject": "Tafsir", "teacher": "Ilham Ghoffar Solekhan, S.H., M.H." },
       { "time": "10:10-11:20", "subject": "Bahasa Inggris", "teacher": "Woro Fatimah, S.Pd." }
     ],
     "6": [
       { "time": "07:00-08:20", "subject": "Geografi", "teacher": "Budiarti, S.Ag." },
-      { "time": "08:20-09:40", "subject": "Sosiologi", "teacher": "Zaenal Mustaqim, S.Pd." },
+      { "time": "08:20-09:00", "subject": "Bahasa Inggris", "teacher": "Woro Fatimah, S.Pd." },
+      { "time": "09:00-09:40", "subject": "Sosiologi", "teacher": "Zaenal Mustaqim, S.Pd." },
       { "time": "09:40-10:00", "subject": "Istirahat", "teacher": null },
-      { "time": "10:00-10:40", "subject": "Matematika", "teacher": "Eni Erawati, S.Pd." },
+      { "time": "10:00-10:40", "subject": "Sosiologi", "teacher": "Zaenal Mustaqim, S.Pd." },
       { "time": "10:40-12:00", "subject": "Nahwu", "teacher": "Sa'adah" },
       { "time": "12:00-13:00", "subject": "Istirahat", "teacher": null },
       { "time": "13:00-14:20", "subject": "Matematika", "teacher": "Eni Erawati, S.Pd." }
@@ -672,8 +675,9 @@
       { "time": "13:00-14:20", "subject": "Prakarya dan Kewirausahaan", "teacher": "Mukhammad Muqorrobin, S.Pd." }
     ],
     "5": [
-      { "time": "07:00-08:10", "subject": "Matematika Lanjutan", "teacher": "Eni Erawati, S.Pd." },
-      { "time": "08:10-09:20", "subject": "Tafsir", "teacher": "Ilham Ghoffar Solekhan, S.H., M.H." },
+      { "time": "07:00-07:35", "subject": "Matematika Lanjutan", "teacher": "Eni Erawati, S.Pd." },
+      { "time": "07:35-08:45", "subject": "Tafsir", "teacher": "Ilham Ghoffar Solekhan, S.H., M.H." },
+      { "time": "08:45-09:20", "subject": "Matematika", "teacher": "Eni Erawati, S.Pd." },
       { "time": "09:20-09:35", "subject": "Istirahat", "teacher": null },
       { "time": "09:35-10:10", "subject": "Matematika", "teacher": "Eni Erawati, S.Pd." },
       { "time": "10:10-11:20", "subject": "Ilmu Hadits", "teacher": "Robit Murtaqi, S.H." }
@@ -733,7 +737,7 @@
       { "time": "08:10-08:45", "subject": "Sosiologi", "teacher": "Zaenal Mustaqim, S.Pd." },
       { "time": "08:45-09:20", "subject": "Geografi", "teacher": "Budiarti, S.Ag." },
       { "time": "09:20-09:35", "subject": "Istirahat", "teacher": null },
-      { "time": "09:35-10:10", "subject": "Matematika", "teacher": "Eni Erawati, S.Pd." },
+      { "time": "09:35-10:10", "subject": "Geografi", "teacher": "Budiarti, S.Ag." },
       { "time": "10:10-11:20", "subject": "Tafsir", "teacher": "Ilham Ghoffar Solekhan, S.H., M.H." }
     ],
     "6": [
