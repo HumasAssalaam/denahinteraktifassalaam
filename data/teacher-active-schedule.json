@@ -299,7 +299,7 @@
       "teacherName": "Hijrauly Albebian, S.I.P.",
       "teacherImage": "images/guru/ustdeveloper.webp",
       "schedule": [
-        { "time": "10:40-12:00", "subject": "Prakarya dan Kewirausahaan", "class": "Kelas 10-2" }
+        { "time": "10:40-12:00", "subject": "Informatika", "class": "Kelas 10-2" }
       ]
     },
     {
@@ -530,6 +530,14 @@
       "schedule": [
         { "time": "07:00-08:20", "subject": "Sejarah Kebudayaan Islam (SKI)", "class": "Kelas 9-A" },
         { "time": "13:00-14:20", "subject": "Sejarah Kebudayaan Islam (SKI)", "class": "Kelas 7-C" }
+      ]
+    },
+    {
+      "teacherId": "T09",
+      "teacherName": "Hijrauly Albebian, S.I.P.",
+      "teacherImage": "images/guru/ustdeveloper.webp",
+      "schedule": [
+        { "time": "07:40-09:00", "subject": "Informatika", "class": "Kelas X-1" }
       ]
     },
     {

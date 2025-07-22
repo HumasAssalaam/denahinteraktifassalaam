@@ -425,7 +425,7 @@
     ],
     "3": [
       { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "teacher": "Tim Tahsin" },
-      { "time": "07:40-09:00", "subject": "Prakarya dan Kewirausahaan", "teacher": "Hijrauly Albebian, S.I.P." },
+      { "time": "07:40-09:00", "subject": "Informatika", "teacher": "Hijrauly Albebian, S.I.P." },
       { "time": "09:00-09:40", "subject": "Aqidah Akhlak", "teacher": "Fuad Zen, S.Pd.I" },
       { "time": "09:40-10:00", "subject": "Istirahat", "teacher": null },
       { "time": "10:00-10:40", "subject": "Aqidah Akhlak", "teacher": "Fuad Zen, S.Pd.I" },
@@ -479,7 +479,7 @@
       { "time": "09:00-09:40", "subject": "IPA (Biologi)", "teacher": "Santi Wilaswari R, S.Pd." },
       { "time": "09:40-10:00", "subject": "Istirahat", "teacher": null },
       { "time": "10:00-10:40", "subject": "IPA (Biologi)", "teacher": "Santi Wilaswari R, S.Pd." },
-      { "time": "10:40-12:00", "subject": "Prakarya dan Kewirausahaan", "teacher": "Hijrauly Albebian, S.I.P." },
+      { "time": "10:40-12:00", "subject": "Informatika", "teacher": "Hijrauly Albebian, S.I.P." },
       { "time": "12:00-13:00", "subject": "Istirahat", "teacher": null },
       { "time": "13:00-14:20", "subject": "Qur'an Hadits", "teacher": "Ilham Ghoffar Solekhan, S.H., M.H." }
     ],
@@ -684,7 +684,7 @@
     ],
     "6": [
       { "time": "07:00-07:40", "subject": "Bahasa Inggris", "teacher": "Woro Fatimah, S.Pd." },
-      { "time": "07:40-09:00", "subject": "Hadits", "teacher": "M. Bagus Wildani" },
+      { "time": "07:40-09:00", "subjdect": "Hadits", "teacher": "M. Bagus Wildani" },
       { "time": "09:00-09:40", "subject": "Pendidikan Kewarganegaraan (PKn)", "teacher": "Yuniah, S.Pt." },
       { "time": "09:40-10:00", "subject": "Istirahat", "teacher": null },
       { "time": "10:00-10:40", "subject": "Pendidikan Kewarganegaraan (PKn)", "teacher": "Yuniah, S.Pt." },
