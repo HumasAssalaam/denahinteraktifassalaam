@@ -435,7 +435,7 @@
     ],
     "4": [
       { "time": "07:00-07:40", "subject": "Tahsin Santri Baru", "teacher": "Tim Tahsin" },
-      { "time": "07:40-08:20", "subject": "Shorof", "teacher": "Drs. Muflih Wahyanto" },
+      { "time": "07:40-08:20", "subject": "Shorof", "teacher": "Drs. KH. Muflih Wahyanto" },
       { "time": "08:20-09:00", "subject": "Bahasa Jawa", "teacher": "Puji Wuryani, S.H., S.Pd." },
       { "time": "09:00-09:40", "subject": "Bahasa Indonesia", "teacher": "Arfan Zafrullah, S.Pd." },
       { "time": "09:40-10:00", "subject": "Istirahat", "teacher": null },
@@ -507,7 +507,7 @@
     "5": [
       { "time": "07:00-07:35", "subject": "Tahsin Santri Baru", "teacher": "Tim Tahsin" },
       { "time": "07:35-08:10", "subject": "Bahasa Jawa", "teacher": "Puji Wuryani, S.H., S.Pd." },
-      { "time": "08:10-08:45", "subject": "Shorof", "teacher": "Drs. Muflih Wahyanto" },
+      { "time": "08:10-08:45", "subject": "Shorof", "teacher": "Drs. KH. Muflih Wahyanto" },
       { "time": "08:45-09:20", "subject": "Nahwu", "teacher": "Fuad Zen, S.Pd.I" },
       { "time": "09:20-09:35", "subject": "Istirahat", "teacher": null },
       { "time": "09:35-10:10", "subject": "Nahwu", "teacher": "Fuad Zen, S.Pd.I" },
@@ -561,7 +561,7 @@
       { "time": "13:00-14:20", "subject": "Ushul Fiqih", "teacher": "Fuad Zen, S.Pd.I" }
     ],
     "5": [
-      { "time": "07:00-07:35", "subject": "Shorof", "teacher": "Drs. Muflih Wahyanto" },
+      { "time": "07:00-07:35", "subject": "Shorof", "teacher": "Drs. KH. Muflih Wahyanto" },
       { "time": "07:35-08:45", "subject": "Fisika", "teacher": "Nur Faizah, S.Pd." },
       { "time": "08:45-09:20", "subject": "Kimia", "teacher": "Sefi Handayani, S.Pd." },
       { "time": "09:20-09:35", "subject": "Istirahat", "teacher": null },
@@ -611,7 +611,7 @@
     ],
     "4": [
       { "time": "07:00-08:20", "subject": "Prakarya dan Kewirausahaan", "teacher": "Mukhammad Muqorrobin, S.Pd." },
-      { "time": "08:20-09:00", "subject": "Shorof", "teacher": "Drs. Muflih Wahyanto" },
+      { "time": "08:20-09:00", "subject": "Shorof", "teacher": "Drs. KH. Muflih Wahyanto" },
       { "time": "09:00-09:40", "subject": "Hadits", "teacher": "Istakim" },
       { "time": "09:40-10:00", "subject": "Istirahat", "teacher": null },
       { "time": "10:00-10:40", "subject": "Hadits", "teacher": "Istakim" },
