@@ -128,6 +128,10 @@
     "name": "Fitrotul Khasanah, S.Pd.",
     "image": "images/guru/usthfitroh.webp"
   },
+  "T34": {
+    "name": "Rizky Defi Zahra Zulfa",
+    "image": "images/guru/usthzulfa.webp"
+  },
   "T35": {
     "name": "Sofiatul Baroroh, S.Pd.",
     "image": "images/guru/usthsofi.webp"
@@ -173,7 +177,7 @@
     "image": "images/guru/usthirma.webp"
   },
   "T46": {
-    "name": "Luk-Luk Abdillah, S.Pd.",
+    "name": "Luk-Luk Abdillah I, S.Pd.",
     "image": "images/guru/usthluk2.webp"
   }
 }
